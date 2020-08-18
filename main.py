@@ -6,6 +6,7 @@ import os
 import UI.FmrInquilino as frmInq
 import UI.FmrProprietario as frmProp
 import UI.FrmImoveis as frmImo
+import UI.FmrContrato as frmContrato
 import lib.ColumnListview as multiList
 
 conteudoFrame = None
@@ -49,7 +50,7 @@ def abrir_prop():
     criaConteudoFrame("PROPRIETARIOS")
     global conteudoFrame
     frm_prop = frmProp.FmrProprietario(conteudoFrame)
-    frm_prop.propMc.table_data = [[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
+    frm_prop.propMc.table_data = [[1,"aVictor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
     #frm_prop.propMc.table_data =[["Ut volutpat nisl nec quam vestibulum",2,3,4,5,6],[1,2,3,4,5,6],[1,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo erat, venenatis et nisl et, bibendum convallis massa. Sed et est id ipsum malesuada volutpat eu auctor sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam erat risus, tristique nec bibendum at, tempor a lacus.",4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6]]
     frm_prop.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
     frm_prop.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
@@ -89,6 +90,33 @@ def abrir_imo():
 
 def abrir_contrato():
     criaConteudoFrame("CONTRATOS")
+    global conteudoFrame
+    frm_contrato = frmContrato.FrmContrato(conteudoFrame)
+    frm_contrato.propMc.table_data = [
+        [
+            25,
+            "Rosenir da Silva Sauro",
+            "Mário dos Santos Junior",
+            "Ativo",
+            "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
+            "01/09/2020",
+            "03/06/2022",
+            "R$ 30.000,00",
+            "Calção",
+            "Foram 03 alugueis de calção"
+        ]
+    ]
+
+    frm_contrato.propMc2.table_data = [
+        [
+            "5",
+            "Aluguél",
+            "10",
+            "Ativo",
+            "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
+        ]
+    ]
+
     btn_clicked()
 
 def abrir_conta():

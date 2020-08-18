@@ -5,6 +5,7 @@ from tkinter import *
 import os
 import UI.FmrInquilino as frmInq
 import UI.FmrProprietario as frmProp
+import UI.FrmImoveis as frmImo
 import lib.ColumnListview as multiList
 
 conteudoFrame = None
@@ -62,6 +63,28 @@ def abrir_prop():
 
 def abrir_imo():
     criaConteudoFrame("IMOVEIS")
+    global conteudoFrame
+    frm_imovel = frmImo.FrmImoveis(conteudoFrame)
+    frm_imovel.inqMc.table_data = [[1,
+                                    "Vilma Barbosa de Oliveira",
+                                    "Rua das Andorinhas Amargas",
+                                    2290,
+                                    "Jardim Nova Palmares Okay",
+                                    "Vale do Sul",
+                                    "SP",
+                                    "1546654786541321",
+                                    "4946516516516541",
+                                    "Casa a, frente para a Rua bla bla bla"]]
+    frm_imovel.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
+    frm_imovel.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
+    frm_imovel.inqMc.configure_column(2, stretch=False, minwidth=250, width=250)
+    frm_imovel.inqMc.configure_column(3, stretch=False, minwidth=65, width=65)
+    frm_imovel.inqMc.configure_column(4, stretch=False, minwidth=200, width=200)
+    frm_imovel.inqMc.configure_column(5, stretch=False, minwidth=120, width=120)
+    frm_imovel.inqMc.configure_column(6, stretch=False, minwidth=30, width=30)
+    frm_imovel.inqMc.configure_column(7, stretch=False, minwidth=150, width=150)
+    frm_imovel.inqMc.configure_column(8, stretch=False, minwidth=150, width=150)
+    frm_imovel.inqMc.configure_column(9, stretch=False, minwidth=550, width=550)
     btn_clicked()
 
 def abrir_contrato():

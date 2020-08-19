@@ -123,11 +123,12 @@ class FrmContrato():
             "Código",
             "Nome do proprietário",
             "Nome do Inquilino",
-            "Status",
             "Endereço do imóvel",
             "Data Inicial",
             "Data Final",
             "Valor",
+            "% Adm.",
+            "Valor Adm.",
             "Garantia",
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
@@ -150,7 +151,7 @@ class FrmContrato():
 
 
         #FRAME BOTÕES
-        self.lfBtns = LabelFrame(self.frame)
+        self.lfBtns = LabelFrame(self.lfProps)
         self.lfBtns.pack(anchor=NW, fill=X, padx=5, pady=5)
 
         self.frameButton = Frame(self.lfBtns)
@@ -165,6 +166,9 @@ class FrmContrato():
 
         self.button_excluir = Button(self.frameButton, text="Excluir Contrato")
         self.button_excluir.pack(side=LEFT, padx=5)
+
+        self.button_exibir_dados_imovel = Button(self.frameButton, text="Exibir Detalhes do Imóvel")
+        self.button_exibir_dados_imovel.pack(side=LEFT, padx=5)
 
         # FRAME CONTAS VINCULADAS MULTILIST
 
@@ -181,7 +185,6 @@ class FrmContrato():
             "Código",
             "Tipo",
             "Dia do Vencimento",
-            "Status",
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                                     command=self.on_select, cell_anchor="w", heading_anchor=W, height=5)
@@ -199,7 +202,7 @@ class FrmContrato():
         self.propMc2.interior.pack(fill=X, expand=True)
 
         # FRAME BOTÕES
-        self.lfBtns2 = LabelFrame(self.frame)
+        self.lfBtns2 = LabelFrame(self.lfProps2)
         self.lfBtns2.pack(anchor=NW, fill=X, padx=5, pady=5)
 
         self.frameButton2 = Frame(self.lfBtns2)

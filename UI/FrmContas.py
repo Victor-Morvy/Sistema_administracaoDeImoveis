@@ -123,9 +123,9 @@ class FrmContas():
 
         self.propMc = multiList.Multicolumn_Listbox(self.frameContratos, [
             "Código",
+            "Status",
             "Nome do proprietário",
             "Nome do Inquilino",
-            "Status",
             "Endereço do imóvel",
             "Data Inicial",
             "Data Final",
@@ -169,19 +169,29 @@ class FrmContas():
         self.button_excluir.pack(side=LEFT, padx=5)
         '''
 
+
+        # FRAME CONTAS VINCULADAS MULTILIST
+
+        self.lfProps2 = LabelFrame(self.frame, text="Resumo de Pagamentos")
+        self.lfProps2.pack(anchor=NW, fill=X, padx=5, pady=5)
+
+        self.labelExplica = Label(self.lfProps2, text="*Selecione um contrato para exibir as contas vinculadas",
+                                  font="Verdana 9", fg="red")
+        self.labelExplica.pack(anchor=NW, padx=5, pady=5)
+
         # FRAME PARA FILTRO E PESQUISA
-        self.frameOpc = Frame(self.frame)
+        self.frameOpc = Frame(self.lfProps2)
         self.frameOpc.pack(anchor=NW, fill=X)
 
         # FRAME FILTRAR
         self.lfPesquisa = LabelFrame(self.frameOpc, text="Filtrar Pagamentos")
         self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT, fill=X, expand=TRUE)
 
-        self.radioTodos = Radiobutton(self.lfPesquisa, text="Mostrar todas as contas", variable=self.filtroConta,
+        self.radioTodos = Radiobutton(self.lfPesquisa, text="Mostrar contas em aberto", variable=self.filtroConta,
                                       value=0)
         self.radioTodos.pack(anchor=NW, padx=5, pady=2, side=LEFT)
 
-        self.radioAlugados = Radiobutton(self.lfPesquisa, text="Mostrar contas em aberto", variable=self.filtroConta,
+        self.radioAlugados = Radiobutton(self.lfPesquisa, text="Mostrar todas as contas", variable=self.filtroConta,
                                          value=1)
         self.radioAlugados.pack(anchor=NW, padx=5, pady=2, side=LEFT)
 
@@ -189,22 +199,19 @@ class FrmContas():
                                            variable=self.filtroConta, value=2)
         self.radioDesalugado.pack(anchor=NW, padx=5, pady=2, side=LEFT)
 
-        # FRAME CONTAS VINCULADAS MULTILIST
+        # CONTINUA FRAME CONTAS VINCULADAS MULTILIST
 
-        self.lfProps2 = LabelFrame(self.frame, text="Resumo de Pagamentos")
-        self.lfProps2.pack(anchor=NW, fill=X, padx=5, pady=5)
 
-        self.labelExplica = Label(self.lfProps2, text="*Selecione um contrato para exibir as contas vinculadas", font="Verdana 9", fg="red")
-        self.labelExplica.pack(anchor=NW, padx=5, pady=5)
 
         self.frameContratos2 = Frame(self.lfProps2, bd=3, relief=SUNKEN)
         self.frameContratos2.pack(anchor=NW, fill=X, pady=5, padx=5)
 
         self.propMc2 = multiList.Multicolumn_Listbox(self.frameContratos2, [
-            "Código",
-            "Tipo",
-            "Dia do Vencimento",
-            "Status",
+            "Tipo(recuperado pelo id_conta)", #Não existe código pois ele funciona de acordo com as entidades conta_vinculada e conta_paga
+            "Valor",
+            "Data do Vencimento",
+            "Data do Pagamento",
+            "Data de envio",
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                                     command=self.on_select, cell_anchor="w", heading_anchor=W, height=8)
@@ -222,7 +229,7 @@ class FrmContas():
         self.propMc2.interior.pack(fill=X, expand=True)
 
         # FRAME BOTÕES
-        self.lfBtns2 = LabelFrame(self.frame)
+        self.lfBtns2 = LabelFrame(self.lfProps2)
         self.lfBtns2.pack(anchor=NW, fill=X, padx=5, pady=5)
 
         self.frameButton2 = Frame(self.lfBtns2)

@@ -145,13 +145,13 @@ class FmrProprietario():
         self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
 
 
-        self.button_novo = Button(self.frameButton, text="Novo", command=self.janela_proprietario)
+        self.button_novo = Button(self.frameButton, text="Novo Proprietário", command=self.janela_proprietario)
         self.button_novo.pack(side=LEFT, padx=5)
 
-        self.button_editar = Button(self.frameButton, text="Alterar")
+        self.button_editar = Button(self.frameButton, text="Alterar Proprietário")
         self.button_editar.pack(side=LEFT, padx=5)
 
-        self.button_excluir = Button(self.frameButton, text="Excluir")
+        self.button_excluir = Button(self.frameButton, text="Excluir Proprietário")
         self.button_excluir.pack(side=LEFT, padx=5)
 
 

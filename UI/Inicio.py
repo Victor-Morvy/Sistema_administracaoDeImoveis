@@ -2,6 +2,7 @@ from tkinter import Tk
 from tkinter import messagebox
 from tkinter import ttk
 from tkinter import *
+import webbrowser
 import lib.ColumnListview as multiList
 import os
 
@@ -12,6 +13,8 @@ class Inicio():
         print(data)
         print("\n")
 
+    def callback(self, url):
+        webbrowser.open_new(url)
 
     def __init__(self, conteudoFrame):
         self.filtroConta = IntVar()
@@ -58,7 +61,7 @@ class Inicio():
         self.fGithub.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY, fill=X, expand=TRUE)
         self.lGithub = Label(self.fGithub, text="https://github.com/Victor-Morvy/Sistema_administracaoDeImoveis", font="Arial 12", fg="blue", cursor="hand2")
         self.lGithub.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY)
-        #self.lGithub.bind("<Button-1>", lambda e: callback("https://github.com/Victor-Morvy/Sistema_administracaoDeImoveis"))
+        self.lGithub.bind("<Button-1>", lambda e: self.callback("https://github.com/Victor-Morvy/Sistema_administracaoDeImoveis"))
 
         self.fLicensa = LabelFrame(self.frameInicio, text="Licensa de uso:")
         self.fLicensa.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY, fill=X, expand=TRUE)

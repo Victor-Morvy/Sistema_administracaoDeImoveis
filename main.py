@@ -79,7 +79,16 @@ def abrir_prop():
     criaConteudoFrame("PROPRIETARIOS")
     global conteudoFrame
     frm_prop = frmProp.FmrProprietario(conteudoFrame)
-    frm_prop.propMc.table_data = [[1,"aVictor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
+    frm_prop.propMc.table_data = [
+        [
+            1,
+            "aVictor Hugo Martins de Oliveira",
+            "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428",
+            "(19) 9 9272-6879",
+            "(11) 9 8777-7788",
+            "489.789.134-78",
+            "emailaleatorioegrande@gmail.com",
+            "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
     #frm_prop.propMc.table_data =[["Ut volutpat nisl nec quam vestibulum",2,3,4,5,6],[1,2,3,4,5,6],[1,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo erat, venenatis et nisl et, bibendum convallis massa. Sed et est id ipsum malesuada volutpat eu auctor sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam erat risus, tristique nec bibendum at, tempor a lacus.",4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6]]
     frm_prop.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
     frm_prop.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
@@ -99,22 +108,22 @@ def abrir_imo():
                                     "Vilma Barbosa de Oliveira",
                                     "Rua das Andorinhas Amargas",
                                     2290,
+                                    "Apartamento 15",
+                                    "13280-000",
                                     "Jardim Nova Palmares Okay",
                                     "Vale do Sul",
                                     "SP",
-                                    "1546654786541321",
-                                    "4946516516516541",
                                     "Casa a, frente para a Rua bla bla bla"]]
     frm_imovel.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
     frm_imovel.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
     frm_imovel.inqMc.configure_column(2, stretch=False, minwidth=250, width=250)
     frm_imovel.inqMc.configure_column(3, stretch=False, minwidth=65, width=65)
     frm_imovel.inqMc.configure_column(4, stretch=False, minwidth=200, width=200)
-    frm_imovel.inqMc.configure_column(5, stretch=False, minwidth=120, width=120)
-    frm_imovel.inqMc.configure_column(6, stretch=False, minwidth=30, width=30)
-    frm_imovel.inqMc.configure_column(7, stretch=False, minwidth=150, width=150)
-    frm_imovel.inqMc.configure_column(8, stretch=False, minwidth=150, width=150)
-    frm_imovel.inqMc.configure_column(9, stretch=False, minwidth=550, width=550)
+    frm_imovel.inqMc.configure_column(5, stretch=False, minwidth=80, width=80)
+    frm_imovel.inqMc.configure_column(6, stretch=False, minwidth=200, width=200)
+    frm_imovel.inqMc.configure_column(7, stretch=False, minwidth=120, width=120)
+    frm_imovel.inqMc.configure_column(8, stretch=False, minwidth=30, width=30)
+    frm_imovel.inqMc.configure_column(9, stretch=True, minwidth=550, width=550)
     btn_clicked()
 
 def abrir_contrato():
@@ -126,25 +135,54 @@ def abrir_contrato():
             25,
             "Rosenir da Silva Sauro",
             "Mário dos Santos Junior",
-            "Ativo",
             "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
             "01/09/2020",
             "03/06/2022",
             "R$ 30.000,00",
+            "6",
+            "R$ 1.600,00",
             "Calção",
             "Foram 03 alugueis de calção"
         ]
     ]
+    frm_contrato.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
+    frm_contrato.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
+    frm_contrato.propMc.configure_column(2, stretch=False, minwidth=200, width=200)
+    frm_contrato.propMc.configure_column(3, stretch=False, minwidth=450, width=450)
+    frm_contrato.propMc.configure_column(4, stretch=False, minwidth=100, width=100)
+    frm_contrato.propMc.configure_column(5, stretch=False, minwidth=100, width=100)
+    frm_contrato.propMc.configure_column(6, stretch=False, minwidth=100, width=100)
+    frm_contrato.propMc.configure_column(7, stretch=False, minwidth=55, width=55)
+    frm_contrato.propMc.configure_column(8, stretch=False, minwidth=100, width=100)
+    frm_contrato.propMc.configure_column(9, stretch=False, minwidth=80, width=80)
+    frm_contrato.propMc.configure_column(10, stretch=True, minwidth=450, width=450)
 
     frm_contrato.propMc2.table_data = [
         [
             "5",
             "Aluguél",
             "10",
-            "Ativo",
-            "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
+            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
+        ],
+        [
+            "2",
+            "Conta de Água",
+            "10",
+            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
+        ]
+        ,
+        [
+            "2",
+            "Conta de Energia Elétrica",
+            "10",
+            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
         ]
     ]
+
+    frm_contrato.propMc2.configure_column(0, stretch=False, minwidth=65, width=65)
+    frm_contrato.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
+    frm_contrato.propMc2.configure_column(2, stretch=False, minwidth=120, width=120)
+    frm_contrato.propMc2.configure_column(3, stretch=True, minwidth=450, width=450)
 
     btn_clicked()
 
@@ -155,9 +193,33 @@ def abrir_conta():
     frm_contas.propMc.table_data = [
         [
             25,
+            "Contas em aberto",
             "Rosenir da Silva Sauro",
             "Mário dos Santos Junior",
-            "Ativo",
+            "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
+            "01/09/2020",
+            "03/06/2022",
+            "R$ 30.000,00",
+            "Calção",
+            "Foram 03 alugueis de calção"
+        ],
+        [
+            25,
+            "Contas em aberto",
+            "Rosenir da Silva Sauro",
+            "Mário dos Santos Junior",
+            "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
+            "01/09/2020",
+            "03/06/2022",
+            "R$ 30.000,00",
+            "Calção",
+            "Foram 03 alugueis de calção"
+        ],
+        [
+            25,
+            "Sem contas",
+            "Rosenir da Silva Sauro",
+            "Mário dos Santos Junior",
             "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
             "01/09/2020",
             "03/06/2022",
@@ -167,15 +229,42 @@ def abrir_conta():
         ]
     ]
 
+    frm_contas.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
+    frm_contas.propMc.configure_column(1, stretch=False, minwidth=140, width=140)
+    frm_contas.propMc.configure_column(2, stretch=False, minwidth=200, width=200)
+    frm_contas.propMc.configure_column(3, stretch=False, minwidth=200, width=200)
+    frm_contas.propMc.configure_column(4, stretch=False, minwidth=450, width=450)
+    frm_contas.propMc.configure_column(5, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc.configure_column(6, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc.configure_column(7, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc.configure_column(8, stretch=False, minwidth=75, width=75)
+    frm_contas.propMc.configure_column(9, stretch=True, minwidth=450, width=450)
+
     frm_contas.propMc2.table_data = [
         [
-            "5",
-            "Aluguél",
-            "10",
-            "Ativo",
+            "Aluguel",
+            "R$ 12.500,00",
+            "10/08/2020",
+            "09/08/2020",
+            "25/07/2020",
+            "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
+        ],
+        [
+            "Conta de Energia Elétrica",
+            "R$ 12.500,00",
+            "10/08/2020",
+            "09/08/2020",
+            "25/07/2020",
             "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
         ]
     ]
+    frm_contas.propMc2.configure_column(0, stretch=False, minwidth=120, width=120)
+    frm_contas.propMc2.configure_column(1, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc2.configure_column(2, stretch=False, minwidth=100, width=150)
+    frm_contas.propMc2.configure_column(3, stretch=False, minwidth=100, width=150)
+    frm_contas.propMc2.configure_column(4, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc2.configure_column(5, stretch=True, minwidth=450, width=450)
+
     btn_clicked()
 
 def abrir_inicio():

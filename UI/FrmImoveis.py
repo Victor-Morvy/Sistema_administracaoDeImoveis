@@ -164,11 +164,11 @@ class FrmImoveis():
                                                     "Proprietário",
                                                     "Logadouro",
                                                     "Número",
+                                                    "Complemento",
+                                                    "CEP",
                                                     "Bairro",
                                                     "Cidade",
                                                     "UF",
-                                                    "nº Companhia Elétrica",
-                                                    "nº Companhia Sanitária",
                                                     "Observação do Imóvel"
                                                     ], stripped_rows=("black", "#f2f2f2"),
                                  command=self.on_imo_select, cell_anchor="w", heading_anchor=W)
@@ -197,13 +197,13 @@ class FrmImoveis():
         self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
 
 
-        self.button_novo = Button(self.frameButton, text="Novo", command=self.janela_imovel)
+        self.button_novo = Button(self.frameButton, text="Novo Imovel", command=self.janela_imovel)
         self.button_novo.pack(side=LEFT, padx=5)
 
-        self.button_editar = Button(self.frameButton, text="Alterar")
+        self.button_editar = Button(self.frameButton, text="Alterar Imovel")
         self.button_editar.pack(side=LEFT, padx=5)
 
-        self.button_excluir = Button(self.frameButton, text="Excluir")
+        self.button_excluir = Button(self.frameButton, text="Excluir Imovel")
         self.button_excluir.pack(side=LEFT, padx=5)
 
 

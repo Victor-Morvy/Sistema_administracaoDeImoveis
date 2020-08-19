@@ -29,12 +29,12 @@ class Inicio():
 
         self.fTitulo = Frame(self.frameInicio)
         self.fTitulo.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY, fill=X, expand=TRUE)
-        self.labelTitulo = Label(self.fTitulo, text="ADMINISTRAÇÃO DE ALUGUEL DE IMÓVEL", font="Arial 30")
+        self.labelTitulo = Label(self.fTitulo, text="ADMINISTRAÇÃO DE ALUGUEL DE IMÓVEIS", font="Arial 30")
         self.labelTitulo.pack(anchor=NW, padx=self.padGeralX-10, pady=self.padGeralY)
 
         self.fDescricao = Frame(self.frameInicio)
         self.fDescricao.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY, fill=X, expand=TRUE)
-        self.lDescricao = Label(self.fDescricao, text="-Navegue pelo menu acima-\nCaso queira relatar algo sobre o software, favor reportar no e-mail abaixo com o assunto \"(Tkinter) - Admin de imovel\".", font="Arial 9", justify=LEFT, fg="red")
+        self.lDescricao = Label(self.fDescricao, text="-Navegue pelo menu acima-\nCaso queira relatar algo sobre o software, favor reportar no e-mail abaixo com o assunto \"(Tkinter) - Admin de aluguel\".", font="Arial 9", justify=LEFT, fg="red")
         self.lDescricao.pack(anchor=NW, padx=self.padGeralX-10)
 
         self.fVersao = LabelFrame(self.frameInicio, text="Versão:")

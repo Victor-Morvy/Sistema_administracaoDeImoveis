@@ -7,11 +7,40 @@ import UI.FmrInquilino as frmInq
 import UI.FmrProprietario as frmProp
 import UI.FrmImoveis as frmImo
 import UI.FmrContrato as frmContrato
+import UI.FrmContas as frmContas
+import UI.Inicio as pagInicial
 import lib.ColumnListview as multiList
 
 conteudoFrame = None
 selectedModulo = "INICIO"
 
+def btn_clicked():
+    global selectedModulo
+
+    bInq.config(relief=RAISED)
+    bProp.config(relief=RAISED)
+    bConta.config(relief=RAISED)
+    bImo.config(relief=RAISED)
+    bContrato.config(relief=RAISED)
+    bInicio.config(relief=RAISED)
+
+    if selectedModulo == "INQUILINOS":
+        bInq.config(relief=SUNKEN)
+
+    elif selectedModulo == "PROPRIETARIOS":
+        bProp.config(relief=SUNKEN)
+
+    elif selectedModulo == "IMOVEIS":
+        bImo.config(relief=SUNKEN)
+
+    elif selectedModulo == "CONTRATOS":
+        bContrato.config(relief=SUNKEN)
+
+    elif selectedModulo == "CONTAS":
+        bConta.config(relief=SUNKEN)
+
+    elif selectedModulo == "INICIO":
+        bInicio.config(relief=SUNKEN)
 
 def destroyFrame():
     global conteudoFrame
@@ -121,10 +150,43 @@ def abrir_contrato():
 
 def abrir_conta():
     criaConteudoFrame("CONTAS")
+    global conteudoFrame
+    frm_contas = frmContas.FrmContas(conteudoFrame)
+    frm_contas.propMc.table_data = [
+        [
+            25,
+            "Rosenir da Silva Sauro",
+            "Mário dos Santos Junior",
+            "Ativo",
+            "Rua José Ourivo de Souza, n. 25, Jd. Caldas Novas, Vinhedo - SP",
+            "01/09/2020",
+            "03/06/2022",
+            "R$ 30.000,00",
+            "Calção",
+            "Foram 03 alugueis de calção"
+        ]
+    ]
+
+    frm_contas.propMc2.table_data = [
+        [
+            "5",
+            "Aluguél",
+            "10",
+            "Ativo",
+            "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
+        ]
+    ]
+    btn_clicked()
+
+def abrir_inicio():
+    criaConteudoFrame("INICIO")
+    global conteudoFrame
+    pag_inicial = pagInicial.Inicio(conteudoFrame)
     btn_clicked()
 
 zoomImage = 2
 
+imgInicio = PhotoImage(file=os.path.dirname(__file__) + "/images/inicio.png").subsample(zoomImage)
 imgInq = PhotoImage(file=os.path.dirname(__file__) + "/images/inquilino.png").subsample(zoomImage)
 imgProp = PhotoImage(file=os.path.dirname(__file__) + "/images/proprietario.png").subsample(zoomImage)
 imgImovel = PhotoImage(file=os.path.dirname(__file__) + "/images/imovel.png").subsample(zoomImage)
@@ -132,6 +194,9 @@ imgContrato = PhotoImage(file=os.path.dirname(__file__) + "/images/contrato.png"
 imgContas = PhotoImage(file=os.path.dirname(__file__) + "/images/contas.png").subsample(zoomImage)
 
 tamBotao = 100
+
+bInicio = Button(caixa, text="Início", image=imgInicio, compound="top", width=tamBotao, command=abrir_inicio)
+bInicio.pack(side="left")
 
 bProp = Button(caixa, text="Proprietários", image=imgProp, compound="top", width=tamBotao, command=abrir_prop)
 bProp.pack(side="left")
@@ -145,14 +210,15 @@ bImo.pack(side="left")
 bContrato = Button(caixa, text="Contratos", image=imgContrato, compound="top", width=tamBotao, command=abrir_contrato)
 bContrato.pack(side="left")
 
-bConta = Button(caixa, text="Contas", image=imgContas, compound="top", width=tamBotao, command=abrir_conta)
+bConta = Button(caixa, text="Pagamentos", image=imgContas, compound="top", width=tamBotao, command=abrir_conta)
 bConta.pack(side="left")
+
+
 destroyFrame()
 conteudoFrame = Frame(root, bd=5, relief=SUNKEN)
 conteudoFrame.pack(anchor=NW, fill=BOTH, expand=True, side="left")
 
-labelTitulo = Label(conteudoFrame, text="GERENCIAMENTO DE ALUGUEL BLABABALBABASKDSD", font="Arial 25")
-labelTitulo.pack(anchor=NW)
+abrir_inicio()
 '''
 labelTitulo2 = Label(conteudoFrame, text="GERENCIAMENTO DE ALUGUEL BLABABALBABASKDSD", font="Arial 25")
 labelTitulo2.pack(anchor=NW)
@@ -161,29 +227,7 @@ labelTitulo3.pack(anchor=NW)
 labelTitulo4 = Label(conteudoFrame, text="GERENCIAMENTO DE ALUGUEL BLABABALBABASKDSD", font="Arial 25")
 labelTitulo4.pack(anchor=NW)'''
 
-def btn_clicked():
-    global selectedModulo
 
-    bInq.config(relief=RAISED)
-    bProp.config(relief=RAISED)
-    bConta.config(relief=RAISED)
-    bImo.config(relief=RAISED)
-    bContrato.config(relief=RAISED)
-
-    if selectedModulo == "INQUILINOS":
-        bInq.config(relief=SUNKEN)
-
-    elif selectedModulo == "PROPRIETARIOS":
-        bProp.config(relief=SUNKEN)
-
-    elif selectedModulo == "IMOVEIS":
-        bImo.config(relief=SUNKEN)
-
-    elif selectedModulo == "CONTRATOS":
-        bContrato.config(relief=SUNKEN)
-
-    elif selectedModulo == "CONTAS":
-        bConta.config(relief=SUNKEN)
 
 #yScrollBar.config(command=conteudoFrame.)
 root.iconbitmap(os.path.dirname(__file__) + '/images/icon.ico')

@@ -92,6 +92,8 @@ class FrmImoveis():
         self.frameOpc = Frame(self.frame)
         self.frameOpc.pack(anchor=NW, fill=X)
 
+
+        '''
         #FRAME PESQUISA
         self.lfPesquisa = LabelFrame(self.frameOpc, text="Pesquisa")
         self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT)
@@ -115,19 +117,20 @@ class FrmImoveis():
 
         self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
         self.pesquisaBtn.pack(anchor=NE, padx=5)
+        '''
 
         # FRAME FILTRAR
         self.lfPesquisa = LabelFrame(self.frameOpc, text="Filtrar")
         self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
         self.radioTodos = Radiobutton(self.lfPesquisa, text="Mostrar todos os imóveis", variable=self.filtroImovel ,value=0)
-        self.radioTodos.pack(anchor=NW, padx=5, pady=2)
+        self.radioTodos.pack(anchor=NW, padx=5, pady=2, side=LEFT)
 
         self.radioAlugados = Radiobutton(self.lfPesquisa, text="Mostrar imóveis Alugados", variable=self.filtroImovel, value=1)
-        self.radioAlugados.pack(anchor=NW, padx=5, pady=2)
+        self.radioAlugados.pack(anchor=NW, padx=5, pady=2, side=LEFT)
 
         self.radioDesalugado = Radiobutton(self.lfPesquisa, text="Mostrar imóveis Disponíveis", variable=self.filtroImovel, value=2)
-        self.radioDesalugado.pack(anchor=NW, padx=5, pady=2)
+        self.radioDesalugado.pack(anchor=NW, padx=5, pady=2, side=LEFT)
         '''
         self.framePesquisa = Frame(self.lfPesquisa)
         self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)

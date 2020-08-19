@@ -84,7 +84,7 @@ class FmrInquilino():
         self.frameTitulo = Frame(self.lfTitulo)
         self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
         self.labelTitulo = Label(self.frameTitulo, text="PROPRIETARIOS", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)'''
+        self.labelTitulo.pack(anchor=NW)
 
         #FRAME PESQUISA
         self.lfPesquisa = LabelFrame(self.frame, text="Pesquisa")
@@ -110,6 +110,7 @@ class FmrInquilino():
         self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
         self.pesquisaBtn.pack(anchor=NE, padx=5)
 
+        '''
 
         #FRAME PROPRIETARIOS MULTILIST
 

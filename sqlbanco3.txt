@@ -1,0 +1,90 @@
+CREATE TABLE proprietarios (
+    id_prop       INTEGER      PRIMARY KEY AUTOINCREMENT
+                               NOT NULL
+                               UNIQUE,
+    cpf           VARCHAR (45) NOT NULL
+                               UNIQUE,
+    nome          VARCHAR (80) NOT NULL,
+    telefone1     VARCHAR (20),
+    telefone2     VARCHAR (20),
+    endereco      STRING (150) NOT NULL,
+    email         STRING (60),
+    data_exclusao VARCHAR (15),
+    observacao    STRING (450)
+);
+
+CREATE TABLE inquilinos (
+    id_inq       INTEGER      PRIMARY KEY AUTOINCREMENT
+                               NOT NULL
+                               UNIQUE,
+    cpf           VARCHAR (45) NOT NULL
+                               UNIQUE,
+    nome          VARCHAR (80) NOT NULL,
+    telefone1     VARCHAR (20),
+    telefone2     VARCHAR (20),
+    email         STRING (60),
+    data_exclusao VARCHAR (15),
+    observacao    STRING (450)
+);
+
+CREATE TABLE imoveis (
+    id_imovel     INTEGER         PRIMARY KEY AUTOINCREMENT
+                                  NOT NULL
+                                  UNIQUE,
+    id_prop       INTEGER         REFERENCES proprietarios (id_prop) 
+                                  NOT NULL,
+    logadouro     STRING (45)     NOT NULL,
+    complemento   VARCHAR (45),
+    numero        VARCHAR (10)    NOT NULL,
+    bairro        STRING (45)     NOT NULL,
+    cidade        STRING (65)     NOT NULL,
+    uf            STRING (5)      NOT NULL,
+    observacao    STRING (1, 450),
+    data_exclusao STRING (15) 
+);
+
+CREATE TABLE contratos (
+    contrato_id            INTEGER          PRIMARY KEY AUTOINCREMENT
+                                            NOT NULL
+                                            UNIQUE,
+    imovel_id              INTEGER          CONSTRAINT imovelID REFERENCES imoveis (id_imovel) 
+                                            NOT NULL
+                                            UNIQUE,
+    inquilino_id           INTEGER          REFERENCES inquilinos (id_inq) 
+                                            NOT NULL,
+    data_inicial_contrato  DATE             NOT NULL,
+    data_final_contrato    DATE             NOT NULL,
+    valor_aluguel_contrato REAL             NOT NULL,
+    porcent_admin          INTEGER          NOT NULL,
+    garantia               VARCHAR (45)     NOT NULL,
+    observacao             VARCHAR (1, 450),
+    data_exclusao          VARCHAR (15) 
+);
+
+CREATE TABLE contas_vinculadas (
+    id_contas_vinculadas INTEGER          PRIMARY KEY AUTOINCREMENT
+                                          NOT NULL
+                                          UNIQUE,
+    contrato_id          INTEGER          REFERENCES contratos (contrato_id) 
+                                          UNIQUE
+                                          NOT NULL,
+    tipo                 VARCHAR (45)     NOT NULL
+                                          CONSTRAINT tipo_duplicado UNIQUE ON CONFLICT ROLLBACK,
+    mes_vencimento       INT              NOT NULL,
+    observacao           VARCHAR (1, 450),
+    data_exclusao        VARCHAR (15) 
+);
+
+CREATE TABLE contas_pagas (
+    id_conta_paga   INTEGER          PRIMARY KEY AUTOINCREMENT
+                                     NOT NULL
+                                     UNIQUE,
+    id_conta        INTEGER          CONSTRAINT pagto_duplicado NOT NULL ON CONFLICT ROLLBACK
+                                     CONSTRAINT pagto_duplicado REFERENCES contas_vinculadas (id_contas_vinculadas),
+    valor_pago      REAL             NOT NULL,
+    data_pagamento  DATE,
+    data_vencimento DATE             CONSTRAINT pagto_duplicado NOT NULL ON CONFLICT ROLLBACK,
+    data_envio      DATE,
+    observacao      VARCHAR (1, 450),
+    data_exclusao   DATE
+);

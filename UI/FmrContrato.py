@@ -184,7 +184,7 @@ class FrmContrato():
         self.propMc2 = multiList.Multicolumn_Listbox(self.frameContratos2, [
             "Código",
             "Tipo",
-            "Dia do Vencimento",
+            "Mês de referência",
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                                     command=self.on_select, cell_anchor="w", heading_anchor=W, height=5)

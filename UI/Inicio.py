@@ -37,7 +37,7 @@ class Inicio():
 
         self.fDescricao = Frame(self.frameInicio)
         self.fDescricao.pack(anchor=NW, padx=self.padGeralX, pady=self.padGeralY, fill=X, expand=TRUE)
-        self.lDescricao = Label(self.fDescricao, text="-Navegue pelo menu acima-\nCaso queira relatar algo sobre o software, favor reportar no e-mail abaixo com o assunto \"(Tkinter) - Admin de aluguel\".", font="Arial 9", justify=LEFT, fg="red")
+        self.lDescricao = Label(self.fDescricao, text="-Navegue pelo menu acima-\nCaso queira relatar algum bug, comentário ou sugestão, favor reportar no e-mail abaixo.", font="Arial 9", justify=LEFT, fg="red")
         self.lDescricao.pack(anchor=NW, padx=self.padGeralX-10)
 
         self.fVersao = LabelFrame(self.frameInicio, text="Versão:")

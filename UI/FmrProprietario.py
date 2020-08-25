@@ -118,7 +118,16 @@ class FmrProprietario():
         self.frameProprietarios = Frame(self.lfProps, bd=3, relief=SUNKEN)
         self.frameProprietarios.pack(anchor=NW, fill=X, pady=5, padx=5)
 
-        self.propMc = multiList.Multicolumn_Listbox(self.frameProprietarios, ["Código", "Nome", "Endereço", "Telefone 1", "Telefone 2", "CPF", "E-mail", "Observações"], stripped_rows=("black", "#f2f2f2"),
+        self.propMc = multiList.Multicolumn_Listbox(self.frameProprietarios, [
+            "Código",
+            "Nome",
+            "Endereço",
+            "Telefone 1",
+            "Telefone 2",
+            "CPF",
+            "E-mail",
+            "Observações"
+        ], stripped_rows=("black", "#f2f2f2"),
                                  command=self.on_prop_select, cell_anchor="w", heading_anchor=W)
 
         self.verscrollbar = ttk.Scrollbar(self.frameProprietarios, orient="vertical", command=self.propMc.interior.yview)

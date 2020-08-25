@@ -66,11 +66,10 @@ CREATE TABLE contas_vinculadas (
                                           NOT NULL
                                           UNIQUE,
     contrato_id          INTEGER          REFERENCES contratos (contrato_id) 
-                                          UNIQUE
                                           NOT NULL,
     tipo                 VARCHAR (45)     NOT NULL
                                           CONSTRAINT tipo_duplicado UNIQUE ON CONFLICT ROLLBACK,
-    mes_vencimento       INT              NOT NULL,
+    dia_vencimento       INT              CONSTRAINT Apenas_Aluguel_tem_dia CHECK (CASE WHEN tipo != 'Aluguel' THEN 1 ELSE 0 END = 1),
     observacao           VARCHAR (1, 450),
     data_exclusao        VARCHAR (15) 
 );
@@ -86,5 +85,10 @@ CREATE TABLE contas_pagas (
     data_vencimento DATE             CONSTRAINT pagto_duplicado NOT NULL ON CONFLICT ROLLBACK,
     data_envio      DATE,
     observacao      VARCHAR (1, 450),
-    data_exclusao   DATE
+    data_exclusao   DATE,
+    mes_referencia  INT              NOT NULL
 );
+
+
+
+AND dia_vencimento IS NOT NULL

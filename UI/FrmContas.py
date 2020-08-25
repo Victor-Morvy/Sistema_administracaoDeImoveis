@@ -209,6 +209,7 @@ class FrmContas():
         self.propMc2 = multiList.Multicolumn_Listbox(self.frameContratos2, [
             "Tipo(recuperado pelo id_conta)", #Não existe código pois ele funciona de acordo com as entidades conta_vinculada e conta_paga
             "Valor",
+            "Mês de Referência",
             "Data do Vencimento",
             "Data do Pagamento",
             "Data de envio",

@@ -157,7 +157,7 @@ def abrir_contrato():
     frm_contrato.propMc.configure_column(9, stretch=False, minwidth=80, width=80)
     frm_contrato.propMc.configure_column(10, stretch=True, minwidth=450, width=450)
 
-    frm_contrato.propMc2.table_data = [
+    '''frm_contrato.propMc2.table_data = [
         [
             "5",
             "Aluguél",
@@ -183,7 +183,7 @@ def abrir_contrato():
     frm_contrato.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
     frm_contrato.propMc2.configure_column(2, stretch=False, minwidth=120, width=120)
     frm_contrato.propMc2.configure_column(3, stretch=True, minwidth=450, width=450)
-
+'''
     btn_clicked()
 
 def abrir_conta():

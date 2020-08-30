@@ -46,15 +46,14 @@ class FmrInquilino():
             self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
 
             self.l6 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
-            self.t1 = Text(self.lfJanelaDados, height=5, width=15).grid(row=5, column=1, padx=1, pady=self.padInY,
-                                                                        stick=W + E)
+            self.e6 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
 
             self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5,
                                                                                      side=LEFT)
             self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(
                 anchor=NW, padx=5, pady=5, side=LEFT)
 
-            self.jan.geometry("520x344+200+200")
+            self.jan.geometry("520x280+200+200")
             self.jan.title("Inquilino")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)

@@ -13,6 +13,7 @@ import lib.ColumnListview as multiList
 
 conteudoFrame = None
 selectedModulo = "INICIO"
+janela = None
 
 def btn_clicked():
     global selectedModulo
@@ -243,6 +244,7 @@ def abrir_conta():
     frm_contas.propMc2.table_data = [
         [
             "Aluguel",
+            "238472384-2",
             "R$ 12.500,00",
             "10",
             "10/08/2020",
@@ -252,6 +254,7 @@ def abrir_conta():
         ],
         [
             "Conta de Energia Elétrica",
+            "823842342342",
             "R$ 12.500,00",
             "10",
             "10/08/2020",
@@ -260,13 +263,14 @@ def abrir_conta():
             "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
         ]
     ]
-    frm_contas.propMc2.configure_column(0, stretch=False, minwidth=120, width=120)
-    frm_contas.propMc2.configure_column(1, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc2.configure_column(2, stretch=False, minwidth=100, width=150)
-    frm_contas.propMc2.configure_column(3, stretch=False, minwidth=100, width=150)
-    frm_contas.propMc2.configure_column(4, stretch=False, minwidth=100, width=150)
-    frm_contas.propMc2.configure_column(5, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc2.configure_column(6, stretch=True, minwidth=450, width=450)
+    frm_contas.propMc2.configure_column(0, stretch=False, minwidth=150, width=150)
+    frm_contas.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
+    frm_contas.propMc2.configure_column(2, stretch=False, minwidth=100, width=100)
+    frm_contas.propMc2.configure_column(3, stretch=False, minwidth=130, width=130)
+    frm_contas.propMc2.configure_column(4, stretch=False, minwidth=130, width=130)
+    frm_contas.propMc2.configure_column(5, stretch=False, minwidth=130, width=130)
+    frm_contas.propMc2.configure_column(6, stretch=False, minwidth=130, width=130)
+    frm_contas.propMc2.configure_column(7, stretch=True, minwidth=450, width=450)
 
     btn_clicked()
 

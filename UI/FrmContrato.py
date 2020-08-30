@@ -2,7 +2,7 @@ import os
 from tkinter import *
 from tkinter import ttk
 import lib.ColumnListview as multiList
-
+from lib.ValidEntry import validate_entry
 
 class FrmContrato():
 
@@ -18,6 +18,7 @@ class FrmContrato():
             self.entryWidth = 58
 
             self.jan = Tk()
+            self.validate = self.jan.register(validate_entry)
 
             # Variáveis de controle
 
@@ -198,19 +199,19 @@ class FrmContrato():
             self.dataIni = LabelFrame(self.fLinha1, text="Data Inicial:")
             self.dataIni.pack(anchor=NW, padx=5, side=LEFT)
 
-            self.diaIni = Entry(self.dataIni, width=3)
+            self.diaIni = Entry(self.dataIni, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.diaIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             self.labelBarra = Label(self.dataIni, text="/")
             self.labelBarra.pack(anchor=NW, side=LEFT)
 
-            self.mesIni = Entry(self.dataIni, width=3)
+            self.mesIni = Entry(self.dataIni, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.mesIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             self.labelBarra = Label(self.dataIni, text="/")
             self.labelBarra.pack(anchor=NW, side=LEFT)
 
-            self.anoIni = Entry(self.dataIni, width=5)
+            self.anoIni = Entry(self.dataIni, width=5, validate="key", validatecommand=(self.validate, "%P", 4))
             self.anoIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             # DataFinal
@@ -219,26 +220,26 @@ class FrmContrato():
             self.dataFim = LabelFrame(self.fLinha1, text="Data Final:")
             self.dataFim.pack(anchor=NW, padx=5, side=LEFT)
 
-            self.diaFim = Entry(self.dataFim, width=3)
+            self.diaFim = Entry(self.dataFim, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.diaFim.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             self.labelBarra = Label(self.dataFim, text="/")
             self.labelBarra.pack(anchor=NW, side=LEFT)
 
-            self.mesFim = Entry(self.dataFim, width=3)
+            self.mesFim = Entry(self.dataFim, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.mesFim.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             self.labelBarra = Label(self.dataFim, text="/")
             self.labelBarra.pack(anchor=NW, side=LEFT)
 
-            self.anoFim = Entry(self.dataFim, width=5)
+            self.anoFim = Entry(self.dataFim, width=5, validate="key", validatecommand=(self.validate, "%P", 4))
             self.anoFim.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             #DIA PGTO
             self.diaPgto = LabelFrame(self.fLinha1, text="Dia Pgto.:")
             self.diaPgto.pack(anchor=NW, padx=5, side=LEFT)
 
-            self.eDiaPgto = Entry(self.diaPgto, width=3)
+            self.eDiaPgto = Entry(self.diaPgto, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.eDiaPgto.pack(padx=5, pady=5, side=LEFT)
 
             #NUM CONTA DE ÁGUA

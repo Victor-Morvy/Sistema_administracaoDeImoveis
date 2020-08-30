@@ -1,4 +1,3 @@
-
 from tkinter import Tk
 from tkinter import messagebox
 from tkinter import ttk
@@ -6,7 +5,7 @@ from tkinter import *
 import lib.ColumnListview as multiList
 import os
 
-class FmrInquilino():
+class FrmInquilino():
 
     def on_inq_select(self, data):
         print("called command when row is selected")

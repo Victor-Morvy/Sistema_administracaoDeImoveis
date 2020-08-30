@@ -5,7 +5,7 @@ from tkinter import *
 import lib.ColumnListview as multiList
 import os
 
-class FmrProprietario():
+class FrmProprietario():
 
     def on_prop_select(self, data):
         print("called command when row is selected")

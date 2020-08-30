@@ -3,13 +3,14 @@ from tkinter import messagebox
 from tkinter import ttk
 from tkinter import *
 import os
-import UI.FmrInquilino as frmInq
-import UI.FmrProprietario as frmProp
+import UI.FrmInquilino as frmInq
+import UI.FrmProprietario as frmProp
 import UI.FrmImoveis as frmImo
-import UI.FmrContrato as frmContrato
+import UI.FrmContrato as frmContrato
 import UI.FrmContas as frmContas
 import UI.Inicio as pagInicial
 import lib.ColumnListview as multiList
+from lib.ValidEntry import validate_entry
 
 conteudoFrame = None
 selectedModulo = "INICIO"
@@ -50,6 +51,7 @@ def destroyFrame():
         conteudoFrame = None
 
 root = Tk()
+
 caixa = Frame(root, bd=3, relief=SUNKEN)
 caixa.pack(anchor=NW, fill=X)
 
@@ -65,7 +67,7 @@ def criaConteudoFrame(nome):
 def abrir_inq():
     criaConteudoFrame("INQUILINOS")
     global conteudoFrame
-    frm_Inq = frmInq.FmrInquilino(conteudoFrame)
+    frm_Inq = frmInq.FrmInquilino(conteudoFrame)
     frm_Inq.inqMc.table_data =[[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
     frm_Inq.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
     frm_Inq.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
@@ -79,7 +81,7 @@ def abrir_inq():
 def abrir_prop():
     criaConteudoFrame("PROPRIETARIOS")
     global conteudoFrame
-    frm_prop = frmProp.FmrProprietario(conteudoFrame)
+    frm_prop = frmProp.FrmProprietario(conteudoFrame)
     frm_prop.propMc.table_data = [
         [
             1,

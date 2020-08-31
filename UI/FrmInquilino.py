@@ -121,6 +121,14 @@ class FrmInquilino():
         self.inqMc = multiList.Multicolumn_Listbox(self.frameInquilinos, ["Código", "Nome", "Telefone 1", "Telefone 2", "CPF", "E-mail", "Observações"], stripped_rows=("black", "#f2f2f2"),
                                  command=self.on_inq_select, cell_anchor="w", heading_anchor=W)
 
+        self.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
+        self.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
+        self.inqMc.configure_column(2, stretch=False, minwidth=120, width=120)
+        self.inqMc.configure_column(3, stretch=False, minwidth=120, width=120)
+        self.inqMc.configure_column(4, stretch=False, minwidth=120, width=120)
+        self.inqMc.configure_column(5, stretch=False, minwidth=250, width=250)
+        self.inqMc.configure_column(6, stretch=False, minwidth=550, width=550)
+
         self.verscrollbar = ttk.Scrollbar(self.frameInquilinos, orient="vertical", command=self.inqMc.interior.yview)
 
         self.xScrollBar = ttk.Scrollbar(self.frameInquilinos, orient="horizontal", command=self.inqMc.interior.xview)

@@ -14,6 +14,8 @@ from lib.ValidEntry import validate_entry
 
 conteudoFrame = None
 selectedModulo = "INICIO"
+
+#VARIÁVEL GLOBAL PRA JANELA
 janela = None
 
 def btn_clicked():
@@ -69,13 +71,7 @@ def abrir_inq():
     global conteudoFrame
     frm_Inq = frmInq.FrmInquilino(conteudoFrame)
     frm_Inq.inqMc.table_data =[[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
-    frm_Inq.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_Inq.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
-    frm_Inq.inqMc.configure_column(2, stretch=False, minwidth=120, width=120)
-    frm_Inq.inqMc.configure_column(3, stretch=False, minwidth=120, width=120)
-    frm_Inq.inqMc.configure_column(4, stretch=False, minwidth=120, width=120)
-    frm_Inq.inqMc.configure_column(5, stretch=False, minwidth=250, width=250)
-    frm_Inq.inqMc.configure_column(6, stretch=False, minwidth=550, width=550)
+
     btn_clicked()
 
 def abrir_prop():
@@ -93,14 +89,7 @@ def abrir_prop():
             "emailaleatorioegrande@gmail.com",
             "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
     #frm_prop.propMc.table_data =[["Ut volutpat nisl nec quam vestibulum",2,3,4,5,6],[1,2,3,4,5,6],[1,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo erat, venenatis et nisl et, bibendum convallis massa. Sed et est id ipsum malesuada volutpat eu auctor sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam erat risus, tristique nec bibendum at, tempor a lacus.",4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6]]
-    frm_prop.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_prop.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
-    frm_prop.propMc.configure_column(2, stretch=False, minwidth=350, width=350)
-    frm_prop.propMc.configure_column(3, stretch=False, minwidth=120, width=120)
-    frm_prop.propMc.configure_column(4, stretch=False, minwidth=120, width=120)
-    frm_prop.propMc.configure_column(5, stretch=False, minwidth=120, width=120)
-    frm_prop.propMc.configure_column(6, stretch=False, minwidth=250, width=250)
-    frm_prop.propMc.configure_column(7, stretch=False, minwidth=550, width=550)
+
     btn_clicked()
 
 def abrir_imo():
@@ -117,16 +106,7 @@ def abrir_imo():
                                     "Vale do Sul",
                                     "SP",
                                     "Casa a, frente para a Rua bla bla bla"]]
-    frm_imovel.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_imovel.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
-    frm_imovel.inqMc.configure_column(2, stretch=False, minwidth=250, width=250)
-    frm_imovel.inqMc.configure_column(3, stretch=False, minwidth=65, width=65)
-    frm_imovel.inqMc.configure_column(4, stretch=False, minwidth=200, width=200)
-    frm_imovel.inqMc.configure_column(5, stretch=False, minwidth=80, width=80)
-    frm_imovel.inqMc.configure_column(6, stretch=False, minwidth=200, width=200)
-    frm_imovel.inqMc.configure_column(7, stretch=False, minwidth=120, width=120)
-    frm_imovel.inqMc.configure_column(8, stretch=False, minwidth=30, width=30)
-    frm_imovel.inqMc.configure_column(9, stretch=True, minwidth=550, width=550)
+
     btn_clicked()
 
 def abrir_contrato():
@@ -148,17 +128,7 @@ def abrir_contrato():
             "Foram 03 alugueis de calção"
         ]
     ]
-    frm_contrato.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_contrato.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
-    frm_contrato.propMc.configure_column(2, stretch=False, minwidth=200, width=200)
-    frm_contrato.propMc.configure_column(3, stretch=False, minwidth=450, width=450)
-    frm_contrato.propMc.configure_column(4, stretch=False, minwidth=100, width=100)
-    frm_contrato.propMc.configure_column(5, stretch=False, minwidth=100, width=100)
-    frm_contrato.propMc.configure_column(6, stretch=False, minwidth=100, width=100)
-    frm_contrato.propMc.configure_column(7, stretch=False, minwidth=55, width=55)
-    frm_contrato.propMc.configure_column(8, stretch=False, minwidth=100, width=100)
-    frm_contrato.propMc.configure_column(9, stretch=False, minwidth=80, width=80)
-    frm_contrato.propMc.configure_column(10, stretch=True, minwidth=450, width=450)
+
 
     '''frm_contrato.propMc2.table_data = [
         [
@@ -232,17 +202,6 @@ def abrir_conta():
         ]
     ]
 
-    frm_contas.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_contas.propMc.configure_column(1, stretch=False, minwidth=140, width=140)
-    frm_contas.propMc.configure_column(2, stretch=False, minwidth=200, width=200)
-    frm_contas.propMc.configure_column(3, stretch=False, minwidth=200, width=200)
-    frm_contas.propMc.configure_column(4, stretch=False, minwidth=450, width=450)
-    frm_contas.propMc.configure_column(5, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc.configure_column(6, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc.configure_column(7, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc.configure_column(8, stretch=False, minwidth=75, width=75)
-    frm_contas.propMc.configure_column(9, stretch=True, minwidth=450, width=450)
-
     frm_contas.propMc2.table_data = [
         [
             "Aluguel",
@@ -265,14 +224,6 @@ def abrir_conta():
             "Aluguel - destes serão repassados 6% para a imobiliária de administração e pago as contas do imóvel"
         ]
     ]
-    frm_contas.propMc2.configure_column(0, stretch=False, minwidth=150, width=150)
-    frm_contas.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
-    frm_contas.propMc2.configure_column(2, stretch=False, minwidth=100, width=100)
-    frm_contas.propMc2.configure_column(3, stretch=False, minwidth=130, width=130)
-    frm_contas.propMc2.configure_column(4, stretch=False, minwidth=130, width=130)
-    frm_contas.propMc2.configure_column(5, stretch=False, minwidth=130, width=130)
-    frm_contas.propMc2.configure_column(6, stretch=False, minwidth=130, width=130)
-    frm_contas.propMc2.configure_column(7, stretch=True, minwidth=450, width=450)
 
     btn_clicked()
 

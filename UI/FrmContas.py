@@ -139,6 +139,17 @@ class FrmContas():
         ], stripped_rows=("black", "#f2f2f2"),
                                  command=self.on_select, cell_anchor="w", heading_anchor=W, height=9)
 
+        self.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
+        self.propMc.configure_column(1, stretch=False, minwidth=140, width=140)
+        self.propMc.configure_column(2, stretch=False, minwidth=200, width=200)
+        self.propMc.configure_column(3, stretch=False, minwidth=200, width=200)
+        self.propMc.configure_column(4, stretch=False, minwidth=450, width=450)
+        self.propMc.configure_column(5, stretch=False, minwidth=100, width=100)
+        self.propMc.configure_column(6, stretch=False, minwidth=100, width=100)
+        self.propMc.configure_column(7, stretch=False, minwidth=100, width=100)
+        self.propMc.configure_column(8, stretch=False, minwidth=75, width=75)
+        self.propMc.configure_column(9, stretch=True, minwidth=450, width=450)
+
         self.verscrollbar = ttk.Scrollbar(self.frameContratos, orient="vertical", command=self.propMc.interior.yview)
 
         self.xScrollBar = ttk.Scrollbar(self.frameContratos, orient="horizontal", command=self.propMc.interior.xview)
@@ -221,6 +232,15 @@ class FrmContas():
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                                     command=self.on_select, cell_anchor="w", heading_anchor=W, height=8)
+
+        self.propMc2.configure_column(0, stretch=False, minwidth=150, width=150)
+        self.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
+        self.propMc2.configure_column(2, stretch=False, minwidth=100, width=100)
+        self.propMc2.configure_column(3, stretch=False, minwidth=130, width=130)
+        self.propMc2.configure_column(4, stretch=False, minwidth=130, width=130)
+        self.propMc2.configure_column(5, stretch=False, minwidth=130, width=130)
+        self.propMc2.configure_column(6, stretch=False, minwidth=130, width=130)
+        self.propMc2.configure_column(7, stretch=True, minwidth=450, width=450)
 
         self.verscrollbar2 = ttk.Scrollbar(self.frameContratos2, orient="vertical", command=self.propMc2.interior.yview)
 

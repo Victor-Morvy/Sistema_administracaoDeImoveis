@@ -35,25 +35,25 @@ class FrmProprietario():
             self.l2 = Label(self.lfJanelaDados, text="Endereço:").grid(row=1, sticky=W, padx=5, pady=self.padInY)
             self.e2 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=1, column=1)
 
-            self.l2 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
-            self.e2 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=2, column=1)
+            self.l3 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
+            self.e3 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=2, column=1)
 
-            self.l3 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
-            self.e3 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=3, column=1)
+            self.l4 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
+            self.e4 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=3, column=1)
 
-            self.l4 = Label(self.lfJanelaDados, text="CPF:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
-            self.e4 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
+            self.l5 = Label(self.lfJanelaDados, text="CPF:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
+            self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
 
-            self.l5 = Label(self.lfJanelaDados, text="E-mail:").grid(row=5, sticky=W, padx=5, pady=self.padInY)
-            self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
+            self.l6 = Label(self.lfJanelaDados, text="E-mail:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
+            self.e6 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
 
-            self.l6 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
-            self.e6 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
+            self.l7 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
+            self.e7 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
 
             self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5, side=LEFT)
             self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
-            self.jan.geometry("520x280+200+200")
+            self.jan.geometry("520x300+200+200")
             self.jan.title("Proprietário")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)
@@ -129,6 +129,15 @@ class FrmProprietario():
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                  command=self.on_prop_select, cell_anchor="w", heading_anchor=W)
+
+        self.propMc.configure_column(0, stretch=False, minwidth=65, width=65)
+        self.propMc.configure_column(1, stretch=False, minwidth=200, width=200)
+        self.propMc.configure_column(2, stretch=False, minwidth=350, width=350)
+        self.propMc.configure_column(3, stretch=False, minwidth=120, width=120)
+        self.propMc.configure_column(4, stretch=False, minwidth=120, width=120)
+        self.propMc.configure_column(5, stretch=False, minwidth=120, width=120)
+        self.propMc.configure_column(6, stretch=False, minwidth=250, width=250)
+        self.propMc.configure_column(7, stretch=False, minwidth=550, width=550)
 
         self.verscrollbar = ttk.Scrollbar(self.frameProprietarios, orient="vertical", command=self.propMc.interior.yview)
 

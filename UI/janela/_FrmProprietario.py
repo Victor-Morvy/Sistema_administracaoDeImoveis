@@ -6,7 +6,7 @@ import lib.ColumnListview as multiList
 import os
 from lib.ValidEntry import validate_entry
 
-class JanInquilino():
+class JanProprietario():
 
     def __init__(self):
         if self.jan == None:
@@ -28,28 +28,29 @@ class JanInquilino():
             self.l1 = Label(self.lfJanelaDados, text="Nome:").grid(row=0, sticky=W, padx=5, pady=self.padInY)
             self.e1 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=0, column=1)
 
-            self.l2 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=1, sticky=W, padx=5, pady=self.padInY)
+            self.l2 = Label(self.lfJanelaDados, text="Endereço:").grid(row=1, sticky=W, padx=5, pady=self.padInY)
             self.e2 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=1, column=1)
 
-            self.l3 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
+            self.l3 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
             self.e3 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=2, column=1)
 
-            self.l4 = Label(self.lfJanelaDados, text="CPF:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
+            self.l4 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
             self.e4 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=3, column=1)
 
-            self.l5 = Label(self.lfJanelaDados, text="E-mail:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
+            self.l5 = Label(self.lfJanelaDados, text="CPF:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
             self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
 
-            self.l6 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
+            self.l6 = Label(self.lfJanelaDados, text="E-mail:").grid(row=5, sticky=W, padx=5, pady=self.padInY)
             self.e6 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
 
-            self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5,
-                                                                                     side=LEFT)
-            self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(
-                anchor=NW, padx=5, pady=5, side=LEFT)
+            self.l7 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
+            self.e7 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=5, column=1)
+
+            self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5, side=LEFT)
+            self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             self.jan.geometry("520x280+200+200")
-            self.jan.title("Inquilino")
+            self.jan.title("Proprietário")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)
         else:

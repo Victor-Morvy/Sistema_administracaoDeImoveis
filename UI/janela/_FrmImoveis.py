@@ -1,24 +1,14 @@
-
 from tkinter import Tk
 from tkinter import messagebox
 from tkinter import ttk
 from tkinter import *
 import lib.ColumnListview as multiList
 import os
+from lib.ValidEntry import validate_entry
 
-class FrmImoveis():
+class JanImoveis():
 
-    def on_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
-
-    def on_imo_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
-
-    def janela_imovel(self):
+    def __init__(self):
         if self.jan == None:
 
 
@@ -212,161 +202,3 @@ class FrmImoveis():
             self.jan.resizable(0, 0)
         else:
             self.jan.lift()
-
-    def fecha_janela(self):
-        if self.jan != None:
-            self.jan.destroy()
-            self.jan = None
-
-    def __init__(self, conteudoFrame):
-
-        self.filtroImovel = IntVar()
-
-        self.jan = None
-
-        self.frame = Frame(conteudoFrame)
-        self.frame.pack(fill=BOTH, expand=TRUE)
-        self.frame.propagate(0)
-
-
-
-        #FRAME TÍTULO
-
-        '''self.lfTitulo = LabelFrame(self.frame)
-        self.lfTitulo.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameTitulo = Frame(self.lfTitulo)
-        self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
-        self.labelTitulo = Label(self.frameTitulo, text="PROPRIETARIOS", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)'''
-
-        #FRAME PARA FILTRO E PESQUISA
-        self.frameOpc = Frame(self.frame)
-        self.frameOpc.pack(anchor=NW, fill=X)
-
-
-        '''
-        #FRAME PESQUISA
-        self.lfPesquisa = LabelFrame(self.frameOpc, text="Pesquisa")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT)
-
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
-
-        # FRAME FILTRAR
-        self.lfPesquisa = LabelFrame(self.frameOpc, text="Filtrar")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT)
-
-        self.radioTodos = Radiobutton(self.lfPesquisa, text="Mostrar todos os imóveis", variable=self.filtroImovel ,value=0)
-        self.radioTodos.pack(anchor=NW, padx=5, pady=2, side=LEFT)
-
-        self.radioAlugados = Radiobutton(self.lfPesquisa, text="Mostrar imóveis Alugados", variable=self.filtroImovel, value=1)
-        self.radioAlugados.pack(anchor=NW, padx=5, pady=2, side=LEFT)
-
-        self.radioDesalugado = Radiobutton(self.lfPesquisa, text="Mostrar imóveis Disponíveis", variable=self.filtroImovel, value=2)
-        self.radioDesalugado.pack(anchor=NW, padx=5, pady=2, side=LEFT)
-        '''
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar", command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
-
-        #FRAME PROPRIETARIOS MULTILIST
-
-        self.lfInqs = LabelFrame(self.frame, text="Imoveis")
-        self.lfInqs.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameInquilinos = Frame(self.lfInqs, bd=3, relief=SUNKEN)
-        self.frameInquilinos.pack(anchor=NW, fill=X, pady=5, padx=5)
-
-        self.inqMc = multiList.Multicolumn_Listbox(self.frameInquilinos,
-                                                   ["Código",
-                                                    "Proprietário",
-                                                    "Logadouro",
-                                                    "Número",
-                                                    "Complemento",
-                                                    "CEP",
-                                                    "Bairro",
-                                                    "Cidade",
-                                                    "UF",
-                                                    "Observação do Imóvel"
-                                                    ], stripped_rows=("black", "#f2f2f2"),
-                                 command=self.on_imo_select, cell_anchor="w", heading_anchor=W)
-        self.inqMc.configure_column(0, stretch=False, minwidth=65, width=65)
-        self.inqMc.configure_column(1, stretch=False, minwidth=200, width=200)
-        self.inqMc.configure_column(2, stretch=False, minwidth=250, width=250)
-        self.inqMc.configure_column(3, stretch=False, minwidth=65, width=65)
-        self.inqMc.configure_column(4, stretch=False, minwidth=200, width=200)
-        self.inqMc.configure_column(5, stretch=False, minwidth=80, width=80)
-        self.inqMc.configure_column(6, stretch=False, minwidth=200, width=200)
-        self.inqMc.configure_column(7, stretch=False, minwidth=120, width=120)
-        self.inqMc.configure_column(8, stretch=False, minwidth=30, width=30)
-        self.inqMc.configure_column(9, stretch=True, minwidth=550, width=550)
-
-        self.verscrollbar = ttk.Scrollbar(self.frameInquilinos, orient="vertical", command=self.inqMc.interior.yview)
-
-        self.xScrollBar = ttk.Scrollbar(self.frameInquilinos, orient="horizontal", command=self.inqMc.interior.xview)
-
-        self.verscrollbar.pack(side="right", fill="y")
-        self.xScrollBar.pack(side="bottom", fill=X)
-
-        #propMc.interior.columnconfigure()
-        self.inqMc.interior.config(yscrollcommand=self.verscrollbar.set, xscrollcommand=self.xScrollBar.set)
-
-
-
-        self.inqMc.interior.pack(fill=X, expand=True)
-
-
-
-        #FRAME BOTÕES
-        self.lfBtns = LabelFrame(self.frame)
-        self.lfBtns.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameButton = Frame(self.lfBtns)
-        self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
-
-
-        self.button_novo = Button(self.frameButton, text="Novo Imovel", command=self.janela_imovel)
-        self.button_novo.pack(side=LEFT, padx=5)
-
-        self.button_editar = Button(self.frameButton, text="Alterar Imovel")
-        self.button_editar.pack(side=LEFT, padx=5)
-
-        self.button_excluir = Button(self.frameButton, text="Excluir Imovel")
-        self.button_excluir.pack(side=LEFT, padx=5)
-
-
-

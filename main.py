@@ -12,11 +12,15 @@ import UI.Inicio as pagInicial
 import lib.ColumnListview as multiList
 from lib.ValidEntry import validate_entry
 
+
 conteudoFrame = None
 selectedModulo = "INICIO"
 
 #VARIÁVEL GLOBAL PRA JANELA
-janela = None
+#janela = None
+dados = None
+
+frm_opened = None
 
 def btn_clicked():
     global selectedModulo
@@ -46,8 +50,15 @@ def btn_clicked():
     elif selectedModulo == "INICIO":
         bInicio.config(relief=SUNKEN)
 
+
+
 def destroyFrame():
     global conteudoFrame
+    global frm_opened
+
+    if hasattr(frm_opened, "jan"):
+        frm_opened.fecha_janela()
+
     if conteudoFrame is not None:
         conteudoFrame.destroy()
         conteudoFrame = None
@@ -67,18 +78,20 @@ def criaConteudoFrame(nome):
     conteudoFrame.pack(anchor=NW, fill=BOTH, expand=True, side="left")
 
 def abrir_inq():
+    global frm_opened
     criaConteudoFrame("INQUILINOS")
     global conteudoFrame
-    frm_Inq = frmInq.FrmInquilino(conteudoFrame)
-    frm_Inq.inqMc.table_data =[[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
+    frm_opened = frmInq.FrmInquilino(conteudoFrame)
+    frm_opened.inqMc.table_data =[[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira","(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
 
     btn_clicked()
 
 def abrir_prop():
+    global frm_opened
     criaConteudoFrame("PROPRIETARIOS")
     global conteudoFrame
-    frm_prop = frmProp.FrmProprietario(conteudoFrame)
-    frm_prop.propMc.table_data = [
+    frm_opened = frmProp.FrmProprietario(conteudoFrame)
+    frm_opened.propMc.table_data = [
         [
             1,
             "aVictor Hugo Martins de Oliveira",
@@ -88,15 +101,16 @@ def abrir_prop():
             "489.789.134-78",
             "emailaleatorioegrande@gmail.com",
             "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"],[1,"Victor Hugo Martins de Oliveira", "Rua Ourides Poletto, n.11, Jd. Melle, Bairro do Bosque, Vinhedo - SP, CEP: 13234-428", "(19) 9 9272-6879","(11) 9 8777-7788","489.789.134-78","emailaleatorioegrande@gmail.com", "Ligar sempre que possível no horário da tarde, atende whatsapp"]]
-    #frm_prop.propMc.table_data =[["Ut volutpat nisl nec quam vestibulum",2,3,4,5,6],[1,2,3,4,5,6],[1,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo erat, venenatis et nisl et, bibendum convallis massa. Sed et est id ipsum malesuada volutpat eu auctor sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam erat risus, tristique nec bibendum at, tempor a lacus.",4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6]]
+    #frm_opened.propMc.table_data =[["Ut volutpat nisl nec quam vestibulum",2,3,4,5,6],[1,2,3,4,5,6],[1,2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo erat, venenatis et nisl et, bibendum convallis massa. Sed et est id ipsum malesuada volutpat eu auctor sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam erat risus, tristique nec bibendum at, tempor a lacus.",4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6],[1,2,3,4,5,6]]
 
     btn_clicked()
 
 def abrir_imo():
+    global frm_opened
     criaConteudoFrame("IMOVEIS")
     global conteudoFrame
-    frm_imovel = frmImo.FrmImoveis(conteudoFrame)
-    frm_imovel.inqMc.table_data = [[1,
+    frm_opened = frmImo.FrmImoveis(conteudoFrame)
+    frm_opened.inqMc.table_data = [[1,
                                     "Vilma Barbosa de Oliveira",
                                     "Rua das Andorinhas Amargas",
                                     2290,
@@ -110,10 +124,11 @@ def abrir_imo():
     btn_clicked()
 
 def abrir_contrato():
+    global frm_opened
     criaConteudoFrame("CONTRATOS")
     global conteudoFrame
-    frm_contrato = frmContrato.FrmContrato(conteudoFrame)
-    frm_contrato.propMc.table_data = [
+    frm_opened = frmContrato.FrmContrato(conteudoFrame)
+    frm_opened.propMc.table_data = [
         [
             25,
             "Rosenir da Silva Sauro",
@@ -130,7 +145,7 @@ def abrir_contrato():
     ]
 
 
-    '''frm_contrato.propMc2.table_data = [
+    '''frm_opened.propMc2.table_data = [
         [
             "5",
             "Aluguél",
@@ -152,18 +167,19 @@ def abrir_contrato():
         ]
     ]
 
-    frm_contrato.propMc2.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_contrato.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
-    frm_contrato.propMc2.configure_column(2, stretch=False, minwidth=120, width=120)
-    frm_contrato.propMc2.configure_column(3, stretch=True, minwidth=450, width=450)
+    frm_opened.propMc2.configure_column(0, stretch=False, minwidth=65, width=65)
+    frm_opened.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
+    frm_opened.propMc2.configure_column(2, stretch=False, minwidth=120, width=120)
+    frm_opened.propMc2.configure_column(3, stretch=True, minwidth=450, width=450)
 '''
     btn_clicked()
 
 def abrir_conta():
+    global frm_opened
     criaConteudoFrame("CONTAS")
     global conteudoFrame
-    frm_contas = frmContas.FrmContas(conteudoFrame)
-    frm_contas.propMc.table_data = [
+    frm_opened = frmContas.FrmContas(conteudoFrame)
+    frm_opened.propMc.table_data = [
         [
             25,
             "Contas em aberto",
@@ -202,7 +218,7 @@ def abrir_conta():
         ]
     ]
 
-    frm_contas.propMc2.table_data = [
+    frm_opened.propMc2.table_data = [
         [
             "Aluguel",
             "238472384-2",
@@ -228,9 +244,10 @@ def abrir_conta():
     btn_clicked()
 
 def abrir_inicio():
+    global frm_opened
     criaConteudoFrame("INICIO")
     global conteudoFrame
-    pag_inicial = pagInicial.Inicio(conteudoFrame)
+    frm_opened = pagInicial.Inicio(conteudoFrame)
     btn_clicked()
 
 zoomImage = 2

@@ -1,4 +1,4 @@
-class ProprietarioDTO:
+class ProprietarioDTO():
     def __init__(self):
         self.id = None
         self.nome = None
@@ -9,7 +9,7 @@ class ProprietarioDTO:
         self.email = None
         self.obs = None
 
-class InquilinoDTO:
+class InquilinoDTO():
     def __init__(self):
         self.id = None
         self.nome = None
@@ -19,7 +19,7 @@ class InquilinoDTO:
         self.email = None
         self.obs = None
 
-class ImovelDTO:
+class ImovelDTO():
     def __init__(self):
         self.id = None
         self.proprietario_id = None
@@ -30,7 +30,7 @@ class ImovelDTO:
         self.uf = None
         self.obs = None
 
-class ContratoDTO:
+class ContratoDTO():
     def __init__(self):
         self.id = None
         self.inquilino_id = None
@@ -41,6 +41,6 @@ class ContratoDTO:
         self.val_aluguel = None
         self.admin_porcento = None
         self.garantia = None
-        self.n_agua = None
-        self.n_energia = None
+        self.conta_agua = None
+        self.conta_energia = None
         self.obs = None

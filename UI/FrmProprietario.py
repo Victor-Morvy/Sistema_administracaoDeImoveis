@@ -73,43 +73,6 @@ class FrmProprietario():
         self.frame.pack(fill=BOTH, expand=TRUE)
         self.frame.propagate(0)
 
-
-
-        #FRAME TÍTULO
-
-        '''self.lfTitulo = LabelFrame(self.frame)
-        self.lfTitulo.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameTitulo = Frame(self.lfTitulo)
-        self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
-        self.labelTitulo = Label(self.frameTitulo, text="PROPRIETARIOS", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)
-
-        #FRAME PESQUISA
-        self.lfPesquisa = LabelFrame(self.frame, text="Pesquisa")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5)
-
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
-
         #FRAME PROPRIETARIOS MULTILIST
 
         self.lfProps = LabelFrame(self.frame, text="Proprietários")
@@ -149,11 +112,7 @@ class FrmProprietario():
         #propMc.interior.columnconfigure()
         self.propMc.interior.config(yscrollcommand=self.verscrollbar.set, xscrollcommand=self.xScrollBar.set)
 
-
-
         self.propMc.interior.pack(fill=X, expand=True)
-
-
 
         #FRAME BOTÕES
         self.lfBtns = LabelFrame(self.frame)
@@ -161,7 +120,6 @@ class FrmProprietario():
 
         self.frameButton = Frame(self.lfBtns)
         self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
-
 
         self.button_novo = Button(self.frameButton, text="Novo Proprietário", command=self.janela_proprietario)
         self.button_novo.pack(side=LEFT, padx=5)
@@ -171,7 +129,3 @@ class FrmProprietario():
 
         self.button_excluir = Button(self.frameButton, text="Excluir Proprietário")
         self.button_excluir.pack(side=LEFT, padx=5)
-
-
-
-

@@ -22,7 +22,6 @@ class FrmContrato():
 
             # Variáveis de controle
 
-
             self.OptionListGarantia = ["CALÇÃO", "FIADOR", "OUTRO"]
 
             self.OptionList = ["Código", "Nome"]
@@ -185,10 +184,7 @@ class FrmContrato():
             self.propMcn2.interior.pack(fill=X, expand=True)
             # FIM SELECIONA PROPRIETARIO
 
-
-
             #############################
-
 
             # Linha1
             self.fLinha1 = Frame(self.lfJanelaDados)
@@ -215,7 +211,6 @@ class FrmContrato():
             self.anoIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
             # DataFinal
-
 
             self.dataFim = LabelFrame(self.fLinha1, text="Data Final:")
             self.dataFim.pack(anchor=NW, padx=5, side=LEFT)
@@ -290,8 +285,6 @@ class FrmContrato():
             self.eContaEnergia = Entry(self.lfContaEnergia, width=46)
             self.eContaEnergia.pack(padx=5, pady=5, side=LEFT)
 
-
-
             # Linha3
             self.fLinha3 = Frame(self.lfJanelaDados)
             self.fLinha3.pack(anchor=NW, fill=X, padx=5, pady=5)
@@ -302,29 +295,6 @@ class FrmContrato():
 
             self.eObs = Entry(self.obsContrato, width=80)
             self.eObs.pack(anchor=NW, padx=5, pady=5, side=LEFT)
-
-
-            # FIM DADOS DO IMÓVEL
-
-            '''
-            self.l1 = Label(self.lfJanelaDados, text="Nome:").grid(row=0, sticky=W, padx=5, pady=self.padInY)
-            self.e1 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=0, column=1)
-
-            self.l2 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=1, sticky=W, padx=5, pady=self.padInY)
-            self.e2 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=1, column=1)
-
-            self.l3 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
-            self.e3 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=2, column=1)
-
-            self.l4 = Label(self.lfJanelaDados, text="CPF:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
-            self.e4 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=3, column=1)
-
-            self.l5 = Label(self.lfJanelaDados, text="E-mail:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
-            self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
-
-            self.l6 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
-            self.t1 = Text(self.lfJanelaDados, height=5, width=15).grid(row=5, column=1, padx=1, pady=self.padInY,
-                                                                        stick=W + E)'''
 
             self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5,
                                                                                      side=LEFT)
@@ -350,44 +320,6 @@ class FrmContrato():
         self.frame = Frame(conteudoFrame)
         self.frame.pack(fill=BOTH, expand=TRUE)
         self.frame.propagate(0)
-
-
-
-        #FRAME TÍTULO
-
-        '''self.lfTitulo = LabelFrame(self.frame)
-        self.lfTitulo.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameTitulo = Frame(self.lfTitulo)
-        self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
-        self.labelTitulo = Label(self.frameTitulo, text="Contratos", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)'''
-
-        #FRAME PESQUISA
-        '''
-        self.lfPesquisa = LabelFrame(self.frame, text="Pesquisa")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5)
-
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
 
         #FRAME Contratos MULTILIST
 
@@ -434,11 +366,7 @@ class FrmContrato():
         #propMc.interior.columnconfigure()
         self.propMc.interior.config(yscrollcommand=self.verscrollbar.set, xscrollcommand=self.xScrollBar.set)
 
-
-
         self.propMc.interior.pack(fill=X, expand=True)
-
-
 
         #FRAME BOTÕES
         self.lfBtns = LabelFrame(self.lfProps)
@@ -459,54 +387,3 @@ class FrmContrato():
 
         self.button_exibir_dados_imovel = Button(self.frameButton, text="Exibir Detalhes do Imóvel")
         self.button_exibir_dados_imovel.pack(side=LEFT, padx=5)
-
-        # FRAME CONTAS VINCULADAS MULTILIST
-        '''
-        self.lfProps2 = LabelFrame(self.frame, text="Contas Vinculadas")
-        self.lfProps2.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.labelExplica = Label(self.lfProps2, text="*Selecione um contrato para exibir as contas vinculadas", font="Verdana 9", fg="red")
-        self.labelExplica.pack(anchor=NW, padx=5, pady=5)
-
-        self.frameContratos2 = Frame(self.lfProps2, bd=3, relief=SUNKEN)
-        self.frameContratos2.pack(anchor=NW, fill=X, pady=5, padx=5)
-
-        self.propMc2 = multiList.Multicolumn_Listbox(self.frameContratos2, [
-            "Código",
-            "Tipo",
-            "Dia do pagamento",
-            "Observações"
-        ], stripped_rows=("black", "#f2f2f2"),
-                                                    command=self.on_select, cell_anchor="w", heading_anchor=W, height=5)
-
-        self.verscrollbar2 = ttk.Scrollbar(self.frameContratos2, orient="vertical", command=self.propMc2.interior.yview)
-
-        self.xScrollBar2 = ttk.Scrollbar(self.frameContratos2, orient="horizontal", command=self.propMc2.interior.xview)
-
-        self.verscrollbar2.pack(side="right", fill="y")
-        self.xScrollBar2.pack(side="bottom", fill=X)
-
-        # propMc.interior.columnconfigure()
-        self.propMc2.interior.config(yscrollcommand=self.verscrollbar2.set, xscrollcommand=self.xScrollBar2.set)
-
-        self.propMc2.interior.pack(fill=X, expand=True)
-
-        # FRAME BOTÕES
-        self.lfBtns2 = LabelFrame(self.lfProps2)
-        self.lfBtns2.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameButton2 = Frame(self.lfBtns2)
-        self.frameButton2.pack(anchor=NW, padx=5, pady=5, fill=X)
-
-        self.button_novo2 = Button(self.frameButton2, text="Vincular Conta ao Contrato", command=self.janela_proprietario)
-        self.button_novo2.pack(side=LEFT, padx=5)
-
-        self.button_editar2 = Button(self.frameButton2, text="Alterar Conta do Contrato")
-        self.button_editar2.pack(side=LEFT, padx=5)
-
-        self.button_excluir2 = Button(self.frameButton2, text="Excluir Conta do Contrato")
-        self.button_excluir2.pack(side=LEFT, padx=5)
-        '''
-
-
-

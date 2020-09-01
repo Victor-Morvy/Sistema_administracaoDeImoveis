@@ -21,7 +21,6 @@ class FrmImoveis():
     def janela_imovel(self):
         if self.jan == None:
 
-
             self.padInY = 5
             self.entryWidth = 58
 
@@ -36,14 +35,11 @@ class FrmImoveis():
             self.tipoPesquisa = StringVar(self.jan)
             self.tipoPesquisa.set(self.OptionList[0])
 
-
             #Fim variáveis de controle
 
             self.jan.protocol("WM_DELETE_WINDOW", self.fecha_janela)
             self.janFrame = Frame(self.jan)
             self.janFrame.pack(side=LEFT, fill=X, anchor=NW, expand=True)
-
-
 
             self.lfJanelaDados = LabelFrame(self.janFrame)
             self.lfJanelaDados.pack(fill=X, anchor=NW, padx=3, pady=3)
@@ -51,11 +47,7 @@ class FrmImoveis():
             self.lfJanelaBtns = LabelFrame(self.janFrame)
             self.lfJanelaBtns.pack(fill=X, anchor=NW, padx=3, pady=3)
 
-
             #Coluna proprietario
-
-            # FRAME PROPRIETARIOS
-
 
             self.frameContratos = LabelFrame(self.lfJanelaDados, text="Proprietário")
             self.frameContratos.pack(anchor=NW, fill=X, pady=5, padx=5)
@@ -180,27 +172,6 @@ class FrmImoveis():
 
             #FIM DADOS DO IMÓVEL
 
-
-            '''
-            self.l1 = Label(self.lfJanelaDados, text="Nome:").grid(row=0, sticky=W, padx=5, pady=self.padInY)
-            self.e1 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=0, column=1)
-
-            self.l2 = Label(self.lfJanelaDados, text="Telefone 1:").grid(row=1, sticky=W, padx=5, pady=self.padInY)
-            self.e2 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=1, column=1)
-
-            self.l3 = Label(self.lfJanelaDados, text="Telefone 2:").grid(row=2, sticky=W, padx=5, pady=self.padInY)
-            self.e3 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=2, column=1)
-
-            self.l4 = Label(self.lfJanelaDados, text="CPF:").grid(row=3, sticky=W, padx=5, pady=self.padInY)
-            self.e4 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=3, column=1)
-
-            self.l5 = Label(self.lfJanelaDados, text="E-mail:").grid(row=4, sticky=W, padx=5, pady=self.padInY)
-            self.e5 = Entry(self.lfJanelaDados, width=self.entryWidth).grid(row=4, column=1)
-
-            self.l6 = Label(self.lfJanelaDados, text="Observação:").grid(row=5, sticky=NW, padx=5, pady=self.padInY)
-            self.t1 = Text(self.lfJanelaDados, height=5, width=15).grid(row=5, column=1, padx=1, pady=self.padInY,
-                                                                        stick=W + E)'''
-
             self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5,
                                                                                      side=LEFT)
             self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(
@@ -228,48 +199,9 @@ class FrmImoveis():
         self.frame.pack(fill=BOTH, expand=TRUE)
         self.frame.propagate(0)
 
-
-
-        #FRAME TÍTULO
-
-        '''self.lfTitulo = LabelFrame(self.frame)
-        self.lfTitulo.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameTitulo = Frame(self.lfTitulo)
-        self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
-        self.labelTitulo = Label(self.frameTitulo, text="PROPRIETARIOS", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)'''
-
         #FRAME PARA FILTRO E PESQUISA
         self.frameOpc = Frame(self.frame)
         self.frameOpc.pack(anchor=NW, fill=X)
-
-
-        '''
-        #FRAME PESQUISA
-        self.lfPesquisa = LabelFrame(self.frameOpc, text="Pesquisa")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5, side=LEFT)
-
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
 
         # FRAME FILTRAR
         self.lfPesquisa = LabelFrame(self.frameOpc, text="Filtrar")
@@ -283,25 +215,6 @@ class FrmImoveis():
 
         self.radioDesalugado = Radiobutton(self.lfPesquisa, text="Mostrar imóveis Disponíveis", variable=self.filtroImovel, value=2)
         self.radioDesalugado.pack(anchor=NW, padx=5, pady=2, side=LEFT)
-        '''
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar", command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
 
         #FRAME PROPRIETARIOS MULTILIST
 
@@ -344,12 +257,7 @@ class FrmImoveis():
 
         #propMc.interior.columnconfigure()
         self.inqMc.interior.config(yscrollcommand=self.verscrollbar.set, xscrollcommand=self.xScrollBar.set)
-
-
-
         self.inqMc.interior.pack(fill=X, expand=True)
-
-
 
         #FRAME BOTÕES
         self.lfBtns = LabelFrame(self.frame)
@@ -367,6 +275,3 @@ class FrmImoveis():
 
         self.button_excluir = Button(self.frameButton, text="Excluir Imovel")
         self.button_excluir.pack(side=LEFT, padx=5)
-
-
-

@@ -12,7 +12,6 @@ import UI.Inicio as pagInicial
 import lib.ColumnListview as multiList
 from lib.ValidEntry import validate_entry
 
-
 conteudoFrame = None
 selectedModulo = "INICIO"
 

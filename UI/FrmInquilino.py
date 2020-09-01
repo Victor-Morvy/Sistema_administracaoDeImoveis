@@ -52,7 +52,7 @@ class FrmInquilino():
             self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(
                 anchor=NW, padx=5, pady=5, side=LEFT)
 
-            self.jan.geometry("520x280+200+200")
+            self.jan.geometry("520x277+200+200")
             self.jan.title("Inquilino")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)

@@ -115,7 +115,7 @@ class JanImoveis():
             self.fLinha1.pack(anchor=NW, fill=X, padx=5, pady=5)
 
             #Logadouro
-            self.lfLog = LabelFrame(self.fLinha1, text="Logadouro:")
+            self.lfLog = LabelFrame(self.fLinha1, text="Logadrouro:")
             self.lfLog.pack(anchor=NW, padx=5, side=LEFT)
             self.eLog = Entry(self.lfLog, width=60)
             self.eLog.pack(anchor=NW, padx=5, pady=5, side=LEFT)

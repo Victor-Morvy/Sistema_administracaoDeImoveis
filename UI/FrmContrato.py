@@ -2,7 +2,7 @@ import os
 from tkinter import *
 from tkinter import ttk
 import lib.ColumnListview as multiList
-from lib.ValidEntry import validate_entry
+from lib.funcoes import validate_entry
 
 class FrmContrato():
 

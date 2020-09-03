@@ -5,7 +5,7 @@ class ProprietarioDTO():
         self.endereco = None
         self.tel1 = None
         self.tel2 = None
-        self.CPF = None
+        self.cpf = None
         self.email = None
         self.obs = None
 
@@ -15,7 +15,7 @@ class InquilinoDTO():
         self.nome = None
         self.tel1 = None
         self.tel2 = None
-        self.CPF = None
+        self.cpf = None
         self.email = None
         self.obs = None
 
@@ -43,4 +43,16 @@ class ContratoDTO():
         self.garantia = None
         self.conta_agua = None
         self.conta_energia = None
+        self.obs = None
+
+class ContasDTO():
+    def __init__(self):
+        self.id = None
+        self.contrato_id = None
+        self.tipo = None
+        self.valor_pago = None
+        self.mes_de_referencia = None
+        self.data_de_envio = None
+        self.data_de_vencimento = None
+        self.data_de_pagamento = None
         self.obs = None

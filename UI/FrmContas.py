@@ -4,7 +4,7 @@ from tkinter import ttk
 from tkinter import *
 import lib.ColumnListview as multiList
 import os
-from lib.ValidEntry import validate_entry
+from lib.funcoes import *
 
 
 class FrmContas():
@@ -14,7 +14,7 @@ class FrmContas():
         print(data)
         print("\n")
 
-    def janela_conta(self):
+    def janela_pagamento(self):
         if self.jan == None:
 
             self.padInY = 5
@@ -24,19 +24,15 @@ class FrmContas():
 
             self.validate = self.jan.register(validate_entry)
 
-            #self.entt = validEntry.Valid_Entry(self.jan, 2)
-
-
+            # self.entt = validEntry.Valid_Entry(self.jan, 2)
 
             self.jan.protocol("WM_DELETE_WINDOW", self.fecha_janela)
             self.janFrame = Frame(self.jan)
             self.janFrame.pack(side=LEFT, fill=X, anchor=NW, expand=True)
 
-            self.lfJanelaDados = LabelFrame(self.janFrame, text=("Confirme a data:"))
+            ##ENVIO
+            self.lfJanelaDados = LabelFrame(self.janFrame, text=("Data do pagamento:"))
             self.lfJanelaDados.pack(fill=X, anchor=NW, padx=3, pady=3)
-
-            self.lfJanelaBtns = LabelFrame(self.janFrame)
-            self.lfJanelaBtns.pack(fill=X, anchor=NW, padx=3, pady=3)
 
             self.diaIni = Entry(self.lfJanelaDados, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
             self.diaIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
@@ -54,17 +50,154 @@ class FrmContas():
             self.anoIni = Entry(self.lfJanelaDados, width=5, validate="key", validatecommand=(self.validate, "%P", 4))
             self.anoIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
-            self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5, side=LEFT)
-            self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(anchor=NW, padx=5, pady=5, side=LEFT)
+            # observacao
+            self.lfObs = LabelFrame(self.janFrame, text=("Observação:"))
+            self.lfObs.pack(fill=X, anchor=NW, padx=3, pady=3)
+            self.eObs = Entry(self.lfObs, width=50)
+            self.eObs.pack(anchor=NW, padx=5, pady=5, side=LEFT)
 
-            self.jan.geometry("250x112+200+200")
-            self.jan.title("Data")
+            ##FIM ENVIO
+            self.lfJanelaBtns = LabelFrame(self.janFrame)
+            self.lfJanelaBtns.pack(fill=X, anchor=NW, padx=3, pady=3)
+            self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5,
+                                                                                     side=LEFT)
+            self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(
+                anchor=NW, padx=5, pady=5, side=LEFT)
+
+            # self.jan.geometry("250x112+200+200")
+            self.jan.title("Pagamento")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)
         else:
-            self.jan.lift()
+            self.fecha_janela()
+
+    def janela_conta(self):
+
+        if self.jan == None:
+
+            self.padInY = 5
+            self.entryWidth = 58
+
+            self.jan = Tk()
+
+            # tipo de conta
+            self.tipoList = ["ALUGUEL", "ÁGUA", "ENERGIA"]
+
+            self.tipoConta = StringVar(self.jan)
+            self.tipoConta.set(self.tipoList[0])
+
+            self.validate = self.jan.register(validate_entry)
+
+            #self.entt = validEntry.Valid_Entry(self.jan, 2)
+
+            self.jan.protocol("WM_DELETE_WINDOW", self.fecha_janela)
+            self.janFrame = Frame(self.jan)
+            self.janFrame.pack(side=LEFT, fill=X, anchor=NW, expand=True)
+
+            #LINHA 1
+            self.frameL1 = Frame(self.janFrame)
+            self.frameL1.pack(anchor=NW, padx=3, pady=3)
+
+            #data envio
+            self.lfJanelaDados = LabelFrame(self.frameL1, text=("Data de envio:"))
+            self.lfJanelaDados.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+
+            self.diaIni = Entry(self.lfJanelaDados, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
+            self.diaIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+            self.diaIni.focus_set()
+
+            self.labelBarra = Label(self.lfJanelaDados, text="/")
+            self.labelBarra.pack(anchor=NW, side=LEFT)
+
+            self.mesIni = Entry(self.lfJanelaDados, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
+            self.mesIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            self.labelBarra = Label(self.lfJanelaDados, text="/")
+            self.labelBarra.pack(anchor=NW, side=LEFT)
+
+            self.anoIni = Entry(self.lfJanelaDados, width=5, validate="key", validatecommand=(self.validate, "%P", 4))
+            self.anoIni.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            # data vencimento
+
+            self.lfJanelaVenci = LabelFrame(self.frameL1, text=("Data de vencimento:"))
+            self.lfJanelaVenci.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+
+            self.diaVenci = Entry(self.lfJanelaVenci, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
+            self.diaVenci.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            self.labelBarra2 = Label(self.lfJanelaVenci, text="/")
+            self.labelBarra2.pack(anchor=NW, side=LEFT)
+
+            self.mesVenci = Entry(self.lfJanelaVenci, width=3, validate="key", validatecommand=(self.validate, "%P", 2))
+            self.mesVenci.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            self.labelBarra2 = Label(self.lfJanelaVenci, text="/")
+            self.labelBarra2.pack(anchor=NW, side=LEFT)
+
+            self.anoVenci = Entry(self.lfJanelaVenci, width=5, validate="key", validatecommand=(self.validate, "%P", 4))
+            self.anoVenci.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            # LINHA 2
+            self.frameL2 = Frame(self.janFrame)
+            self.frameL2.pack(anchor=NW, padx=3, pady=3)
+
+            #mes ref
+            self.lfMesRef = LabelFrame(self.frameL2, text=("Mês Ref.:"))
+            self.lfMesRef.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+            self.mesRef = Entry(self.lfMesRef, width=5, validate="key", validatecommand=(self.validate, "%P", 2))
+            self.mesRef.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            #tipo conta (select_box)
+            self.lfTipo = LabelFrame(self.frameL2, text=("Tipo de conta:"))
+            self.lfTipo.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+
+            self.opTipo = OptionMenu(self.lfTipo, self.tipoConta, *self.tipoList)
+            self.opTipo.pack(anchor=NW, side=LEFT)
+
+            #valor
+            self.lfValor = LabelFrame(self.frameL2, text=("Valor:"))
+            self.lfValor.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+
+            self.brl = Label(self.lfValor, text="R$")
+            self.brl.pack(anchor=NW, side=LEFT, pady=5)
+
+            self.eValAluguel = Entry(self.lfValor, width=10)
+            self.eValAluguel.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            self.brl = Label(self.lfValor, text=",00")
+            self.brl.pack(anchor=NW, side=LEFT, pady=5)
+
+            # LINHA 3
+            self.frameL3 = Frame(self.janFrame)
+            self.frameL3.pack(anchor=NW, padx=3, pady=3)
+
+            #observacao
+            self.lfObs = LabelFrame(self.frameL3, text=("Observação:"))
+            self.lfObs.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+            self.eObs = Entry(self.lfObs, width=50)
+            self.eObs.pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            # LINHA 4
+            self.frameL4 = Frame(self.janFrame)
+            self.frameL4.pack(anchor=NW, padx=3, pady=3)
+
+            #Botoes
+            self.lfJanelaBtns = LabelFrame(self.frameL4)
+            self.lfJanelaBtns.pack(fill=X, anchor=NW, padx=3, pady=3, side=LEFT)
+
+            self.btnSalvar = Button(self.lfJanelaBtns, text="Salvar", width=10).pack(anchor=NW, padx=5, pady=5, side=LEFT)
+            self.btnCancel = Button(self.lfJanelaBtns, text="Cancelar", width=10, command=self.fecha_janela).pack(anchor=NW, padx=5, pady=5, side=LEFT)
+
+            #self.jan.geometry("250x112+200+200")
+            self.jan.title("Confirmirme a conta")
+            self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
+            self.jan.resizable(0, 0)
+        else:
+            self.fecha_janela()
 
     def fecha_janela(self):
+
         if self.jan != None:
             self.jan.destroy()
             self.jan = None
@@ -78,44 +211,6 @@ class FrmContas():
         self.frame = Frame(conteudoFrame)
         self.frame.pack(fill=BOTH, expand=TRUE)
         self.frame.propagate(0)
-
-
-
-        #FRAME TÍTULO
-
-        '''self.lfTitulo = LabelFrame(self.frame)
-        self.lfTitulo.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameTitulo = Frame(self.lfTitulo)
-        self.frameTitulo.pack(fill=X, anchor=NW, padx=3, pady=3)
-        self.labelTitulo = Label(self.frameTitulo, text="Contratos", font="Arial 20")
-        self.labelTitulo.pack(anchor=NW)'''
-
-        #FRAME PESQUISA
-        '''
-        self.lfPesquisa = LabelFrame(self.frame, text="Pesquisa")
-        self.lfPesquisa.pack(anchor=NW, padx=5, pady=5)
-
-        self.framePesquisa = Frame(self.lfPesquisa)
-        self.framePesquisa.pack(anchor=NW, padx=3, pady=3, side=BOTTOM)
-
-
-
-        self.framePesquisaBtn = Frame(self.framePesquisa)
-        self.framePesquisaBtn.pack(anchor=NE, side=BOTTOM, pady=5)
-
-        self.labelPesquisa = Label(self.lfPesquisa, text="Tipo de pesquisa").pack(anchor=NW, side=TOP)
-
-        self.pesquisaCombobox = ttk.Combobox(self.framePesquisa, values=["Código", "Nome"], width=8)
-        self.pesquisaCombobox.pack(anchor=NW, side=LEFT, padx=5)
-        self.pesquisaCombobox.current(0)
-
-        self.pesquisaEntry = Entry(self.framePesquisa, width=35)
-        self.pesquisaEntry.pack(anchor=NW, side=LEFT, padx=5)
-
-        self.pesquisaBtn = Button(self.framePesquisaBtn, text="Pesquisar",command=print("oi"))
-        self.pesquisaBtn.pack(anchor=NE, padx=5)
-        '''
 
         #FRAME Contratos MULTILIST
 
@@ -160,30 +255,7 @@ class FrmContas():
         #propMc.interior.columnconfigure()
         self.propMc.interior.config(yscrollcommand=self.verscrollbar.set, xscrollcommand=self.xScrollBar.set)
 
-
-
         self.propMc.interior.pack(fill=X, expand=True)
-
-        '''
-
-        #FRAME BOTÕES
-        self.lfBtns = LabelFrame(self.frame)
-        self.lfBtns.pack(anchor=NW, fill=X, padx=5, pady=5)
-
-        self.frameButton = Frame(self.lfBtns)
-        self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
-
-
-        self.button_novo = Button(self.frameButton, text="Novo Contrato", command=self.janela_conta)
-        self.button_novo.pack(side=LEFT, padx=5)
-
-        self.button_editar = Button(self.frameButton, text="Alterar Contrato")
-        self.button_editar.pack(side=LEFT, padx=5)
-
-        self.button_excluir = Button(self.frameButton, text="Excluir Contrato")
-        self.button_excluir.pack(side=LEFT, padx=5)
-        '''
-
 
         # FRAME CONTAS VINCULADAS MULTILIST
 
@@ -216,8 +288,6 @@ class FrmContas():
 
         # CONTINUA FRAME CONTAS VINCULADAS MULTILIST
 
-
-
         self.frameContratos2 = Frame(self.lfProps2, bd=3, relief=SUNKEN)
         self.frameContratos2.pack(anchor=NW, fill=X, pady=5, padx=5)
 
@@ -227,8 +297,8 @@ class FrmContas():
             "Valor",
             "Mês de Referência",
             "Data do Vencimento",
+            "Data de Envio",
             "Data do Pagamento",
-            "Data de envio",
             "Observações"
         ], stripped_rows=("black", "#f2f2f2"),
                                                     command=self.on_select, cell_anchor="w", heading_anchor=W, height=8)
@@ -264,16 +334,14 @@ class FrmContas():
         self.button_novo2 = Button(self.frameButton2, text="Confirmar Envio", command=self.janela_conta)
         self.button_novo2.pack(side=LEFT, padx=5)
 
-        self.button_editar2 = Button(self.frameButton2, text="Confirmar Pagamento")
+        self.button_editar2 = Button(self.frameButton2, text="Confirmar Pagamento", command=self.janela_pagamento)
         self.button_editar2.pack(side=LEFT, padx=5)
 
-        self.button_novo3 = Button(self.frameButton2, text="Cancelar Envio", command=self.janela_conta)
+        self.button_novo3 = Button(self.frameButton2, text="Editar Envio")
         self.button_novo3.pack(side=LEFT, padx=5)
 
-        self.button_editar3 = Button(self.frameButton2, text="Cancelar Pagamento")
+        self.button_editar3 = Button(self.frameButton2, text="Editar Pagamento")
         self.button_editar3.pack(side=LEFT, padx=5)
 
-
-
-
-
+        self.button_exclui = Button(self.frameButton2, text="Excluir Conta Selecionada")
+        self.button_exclui.pack(side=LEFT, padx=5)

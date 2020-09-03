@@ -21,7 +21,8 @@ def tratar_resultado_banco(lista):
     return [list(elem) for elem in lista]
 
 #transforma tuplas dentro da lista em listas e joga o id de interesse para frente
-#ideal para receber a lista que retorna no banco
+#ideal para receber a lista que retorna no banco, e colocar o resultado
+#de interesse na frente
 def listar_interesse(id, lista):
     return tratar_resultado_banco(traz_para_frente(id, lista))
 

@@ -23,10 +23,12 @@ class ImovelDTO():
     def __init__(self):
         self.id = None
         self.proprietario_id = None
-        self.logradouro = None
+        self.logadrouro = None
         self.numero = None
         self.bairro = None
         self.cidade = None
+        self.cep = None
+        self.complemento = None
         self.uf = None
         self.obs = None
 

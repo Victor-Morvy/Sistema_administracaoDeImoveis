@@ -1,7 +1,6 @@
 import db.connection as database
 import lib.funcoes as f
 
-
 class ImovelDAO():
     def __init__(self):
         self.banco = database.BancoDeDados()
@@ -26,7 +25,7 @@ class ImovelDAO():
     def alterar_imovel(self, obj):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"UPDATE imoveis SET id_imovel = '{obj.id}', \
+        self.banco.cursor.execute(f"UPDATE imoveis SET \
         id_prop = '{obj.proprietario_id}', logarouro = '{obj.logadrouro}', complemento = '{obj.complemento}', \
         numero = '{obj.numero}', bairro = '{obj.bairro}', cidade = '{obj.cidade}', cep = '{obj.cep}', \
         uf = '{obj.uf}', observacao = '{obj.obs}'\
@@ -88,10 +87,10 @@ class ImovelDAO():
 
         return f.tratar_resultado_banco(self.retorno)
 
-    def dados_imovel(self, obj):
+    def dados_imovel(self, id):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"SELECT * FROM imoveis WHERE id_imovel = '{obj.id}'")
+        self.banco.cursor.execute(f"SELECT * FROM imoveis WHERE id_imovel = '{id}'")
         self.retorno = self.banco.cursor.fetchone()
 
         self.banco.desconecta_db()

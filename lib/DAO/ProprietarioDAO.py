@@ -65,10 +65,10 @@ class ProprietarioDAO():
 
         return f.tratar_resultado_banco(self.retorno)
 
-    def dados_inquilino(self, obj):
+    def dados_proprietario(self, id):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"SELECT * FROM proprietarios WHERE id_prop = {obj.id}")
+        self.banco.cursor.execute(f"SELECT * FROM proprietarios WHERE id_prop = {id}")
         self.retorno = self.banco.cursor.fetchone()
 
         self.banco.desconecta_db()

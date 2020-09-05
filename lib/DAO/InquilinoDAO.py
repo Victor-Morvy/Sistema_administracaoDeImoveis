@@ -61,10 +61,10 @@ class InquilinoDAO():
 
         return f.tratar_resultado_banco(self.retorno)
 
-    def dados_inquilino(self, obj):
+    def dados_inquilino(self, id):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"SELECT * FROM inquilinos WHERE id_inq = {obj.id}")
+        self.banco.cursor.execute(f"SELECT * FROM inquilinos WHERE id_inq = {id}")
         self.retorno = self.banco.cursor.fetchone()
 
         self.banco.desconecta_db()

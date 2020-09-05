@@ -68,6 +68,8 @@ class FrmContas():
             self.jan.title("Pagamento")
             self.jan.iconbitmap(os.path.dirname(__file__) + '/../images/icon.ico')
             self.jan.resizable(0, 0)
+
+            self.jan.lift()
         else:
             self.fecha_janela()
 

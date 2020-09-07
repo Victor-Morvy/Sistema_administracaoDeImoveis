@@ -12,6 +12,7 @@ class FrmContas():
     def on_select(self, data):
         print("called command when row is selected")
         print(data)
+        print(self.filtroConta.get())
         print("\n")
 
     def janela_pagamento(self):

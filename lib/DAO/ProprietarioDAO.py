@@ -1,6 +1,6 @@
 import db.connection as database
 import lib.funcoes as f
-
+#teste
 
 class ProprietarioDAO():
 

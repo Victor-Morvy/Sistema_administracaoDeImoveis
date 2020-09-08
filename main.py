@@ -144,33 +144,6 @@ def abrir_contrato():
     ]
 
 
-    '''frm_opened.propMc2.table_data = [
-        [
-            "5",
-            "Aluguél",
-            "10",
-            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
-        ],
-        [
-            "2",
-            "Conta de Água",
-            "10",
-            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
-        ]
-        ,
-        [
-            "2",
-            "Conta de Energia Elétrica",
-            "10",
-            "Aluguel - destes serão repassados\n 6% para a imobiliária de administração e pago as contas do imóvel"
-        ]
-    ]
-
-    frm_opened.propMc2.configure_column(0, stretch=False, minwidth=65, width=65)
-    frm_opened.propMc2.configure_column(1, stretch=False, minwidth=150, width=150)
-    frm_opened.propMc2.configure_column(2, stretch=False, minwidth=120, width=120)
-    frm_opened.propMc2.configure_column(3, stretch=True, minwidth=450, width=450)
-'''
     btn_clicked()
 
 def abrir_conta():

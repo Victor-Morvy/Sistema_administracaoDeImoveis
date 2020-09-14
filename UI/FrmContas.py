@@ -10,10 +10,7 @@ from lib.funcoes import *
 class FrmContas():
 
     def on_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print(self.filtroConta.get())
-        print("\n")
+        self.selecionado = data[0]
 
     def janela_pagamento(self):
         if self.jan == None:
@@ -206,6 +203,7 @@ class FrmContas():
             self.jan = None
 
     def __init__(self, conteudoFrame):
+        self.selecionado = None
 
         self.filtroConta = IntVar()
 

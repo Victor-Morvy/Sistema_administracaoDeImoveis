@@ -9,9 +9,7 @@ import os
 class FrmImoveis():
 
     def on_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
+        self.selecionado = data[0]
 
     def on_imo_select(self, data):
         print("called command when row is selected")
@@ -190,6 +188,7 @@ class FrmImoveis():
             self.jan = None
 
     def __init__(self, conteudoFrame):
+        self.selecionado = None
 
         self.filtroImovel = IntVar()
 

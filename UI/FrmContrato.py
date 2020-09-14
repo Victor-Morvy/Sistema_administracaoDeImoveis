@@ -7,9 +7,7 @@ from lib.funcoes import validate_entry
 class FrmContrato():
 
     def on_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
+        self.selecionado = data[0]
 
     def janela_proprietario(self):
         if self.jan == None:
@@ -314,7 +312,7 @@ class FrmContrato():
             self.jan = None
 
     def __init__(self, conteudoFrame):
-
+        self.selecionado = None
         self.jan = None
 
         self.frame = Frame(conteudoFrame)

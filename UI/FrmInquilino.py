@@ -8,9 +8,7 @@ import os
 class FrmInquilino():
 
     def on_inq_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
+        self.selecionado = data[0]
 
     def janela_inquilino(self):
         if self.jan == None:
@@ -65,6 +63,7 @@ class FrmInquilino():
             self.jan = None
 
     def __init__(self, conteudoFrame):
+        self.selecionado = None
 
         self.jan = None
 

@@ -1,5 +1,4 @@
-from tkinter import Tk
-from tkinter import messagebox
+from lib.Controller.ProprietariosCTR import ProprietarioCTR
 from tkinter import ttk
 from tkinter import *
 import lib.ColumnListview as multiList
@@ -8,9 +7,7 @@ import os
 class FrmProprietario():
 
     def on_prop_select(self, data):
-        print("called command when row is selected")
-        print(data)
-        print("\n")
+        self.selecionado = data[0]
 
     def janela_proprietario(self):
         if self.jan == None:
@@ -62,10 +59,13 @@ class FrmProprietario():
 
     def fecha_janela(self):
         if self.jan != None:
+            self.operacao = None
             self.jan.destroy()
             self.jan = None
 
     def __init__(self, conteudoFrame):
+        self.selecionado = None
+        self.operacao = None
 
         self.jan = None
 
@@ -129,3 +129,24 @@ class FrmProprietario():
 
         self.button_excluir = Button(self.frameButton, text="Excluir Proprietário")
         self.button_excluir.pack(side=LEFT, padx=5)
+
+    def listar_proprietarios(self):
+        self.propCTR = ProprietarioCTR()
+        self.propMc.clear()
+        self.propMc.table_data = self.propCTR.listar_proprietarios()
+
+    def salvar_proprietario(self, operacao):
+        self.operacao = operacao
+        self.propCTR = ProprietarioCTR()
+
+        if self.operacao == "CADASTRAR":
+            self.propCTR.cadastrar_proprietario(self.e1.get(), self.e2.get(), self.e3.get, self.e4.get(), self.e5.get(),
+                                                self.e6.get(), self.e7.get())
+            self.listar_proprietarios()
+        elif self.operacao == "ATUALIZAR":
+            self.propCTR.alterar_proprietario(self.selecionado, self.e1.get(), self.e2.get(), self.e3.get, self.e4.get(), self.e5.get(),
+                                                self.e6.get(), self.e7.get())
+            self.listar_proprietarios()
+        else:
+            self.fecha_janela()
+

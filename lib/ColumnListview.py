@@ -354,6 +354,7 @@ class Multicolumn_Listbox(object):
         self.clear()
 
         for row in data:
+            #print(row)
             self.insert_row(row)
 
     def focus(self, index=None):

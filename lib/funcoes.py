@@ -18,7 +18,15 @@ def traz_para_frente(id, lista):
 
 #transforma o resultado em list of tuples em list of list
 def tratar_resultado_banco(lista):
-    return [list(elem) for elem in lista]
+    lista2 = []
+
+    for elem in lista:
+        lista_aux = []
+        lista_aux.append(["" if i is None else i for i in elem])
+        lista2.append(lista_aux[0])
+
+    #print(lista2)
+    return list(lista2)
 
 #transforma tuplas dentro da lista em listas e joga o id de interesse para frente
 #ideal para receber a lista que retorna no banco, e colocar o resultado

@@ -19,7 +19,7 @@ class BancoDeDados():
     def conecta_db(self):
         try:
 
-            self.conn = sqlite3.connect("imobiliaria_admin.db")
+            self.conn = sqlite3.connect(os.path.dirname(os.path.abspath(__file__))+"\imobiliaria_admin.sqlite")
             self.cursor = self.conn.cursor()
             print("conexao estabelecida com sucesso")
 
@@ -27,7 +27,7 @@ class BancoDeDados():
             self.cursor.execute(self.sqlite_select_Query)
             record = self.cursor.fetchall()
             print("SQLite Database Version is: ", record)
-            self.cursor.close()
+            #self.cursor.close()
 
         except:
             print("erro ao conectar no banco")

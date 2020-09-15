@@ -133,8 +133,6 @@ class FrmProprietario():
         self.button_excluir = Button(self.frameButton, text="Excluir Proprietário", command=lambda: self.excluir_proprietario(self.selecionado))
         self.button_excluir.pack(side=LEFT, padx=5)
 
-
-
     def listar_proprietarios(self):
         self.propCTR = ProprietarioCTR()
         self.propMc.clear()

@@ -58,11 +58,10 @@ class ProprietarioDAO():
     def listar_proprietarios(self):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"SELECT * FROM proprietarios")
+        self.banco.cursor.execute(f"SELECT id_prop, nome, endereco, telefone1, telefone2, cpf, email, observacao FROM proprietarios")
         self.retorno = self.banco.cursor.fetchall()
 
         self.banco.desconecta_db()
-
         return f.tratar_resultado_banco(self.retorno)
 
     def dados_proprietario(self, id):

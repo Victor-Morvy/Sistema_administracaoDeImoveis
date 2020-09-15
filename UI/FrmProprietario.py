@@ -1,3 +1,5 @@
+from tkinter import Tk
+from tkinter import messagebox
 from lib.Controller.ProprietariosCTR import ProprietarioCTR
 from tkinter import ttk
 from tkinter import *
@@ -9,8 +11,9 @@ class FrmProprietario():
     def on_prop_select(self, data):
         self.selecionado = data[0]
 
-    def janela_proprietario(self):
+    def janela_proprietario(self, operacao):
         if self.jan == None:
+            self.operacao = operacao
             self.padInY = 5
             self.entryWidth = 58
 
@@ -121,14 +124,16 @@ class FrmProprietario():
         self.frameButton = Frame(self.lfBtns)
         self.frameButton.pack(anchor=NW, padx=5, pady=5, fill=X)
 
-        self.button_novo = Button(self.frameButton, text="Novo Proprietário", command=self.janela_proprietario)
+        self.button_novo = Button(self.frameButton, text="Novo Proprietário", command=lambda: self.janela_proprietario("CADASTRAR"))
         self.button_novo.pack(side=LEFT, padx=5)
 
-        self.button_editar = Button(self.frameButton, text="Alterar Proprietário")
+        self.button_editar = Button(self.frameButton, text="Alterar Proprietário", command=lambda: self.janela_proprietario("ATUALIZAR"))
         self.button_editar.pack(side=LEFT, padx=5)
 
-        self.button_excluir = Button(self.frameButton, text="Excluir Proprietário")
+        self.button_excluir = Button(self.frameButton, text="Excluir Proprietário", command=lambda: self.excluir_proprietario(self.selecionado))
         self.button_excluir.pack(side=LEFT, padx=5)
+
+
 
     def listar_proprietarios(self):
         self.propCTR = ProprietarioCTR()
@@ -150,3 +155,10 @@ class FrmProprietario():
         else:
             self.fecha_janela()
 
+    def excluir_proprietario(self, id):
+        if id == None:
+            messagebox.showinfo("Atenção!", "Selecione um proprietário par esta operação")
+        else:
+            self.propCTR = ProprietarioCTR()
+            self.propCTR.excluir_proprietario(id)
+            self.listar_proprietarios()

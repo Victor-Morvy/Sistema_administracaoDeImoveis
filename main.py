@@ -109,16 +109,6 @@ def abrir_imo():
     criaConteudoFrame("IMOVEIS")
     global conteudoFrame
     frm_opened = frmImo.FrmImoveis(conteudoFrame)
-    frm_opened.inqMc.table_data = [[1,
-                                    "Vilma Barbosa de Oliveira",
-                                    "Rua das Andorinhas Amargas",
-                                    2290,
-                                    "Apartamento 15",
-                                    "13280-000",
-                                    "Jardim Nova Palmares Okay",
-                                    "Vale do Sul",
-                                    "SP",
-                                    "Casa a, frente para a Rua bla bla bla"]]
 
     btn_clicked()
 

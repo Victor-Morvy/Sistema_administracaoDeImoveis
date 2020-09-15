@@ -40,7 +40,7 @@ class InquilinoDAO():
     def excluir_inquilino(self, obj):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"DETELE FROM inquilinos WHERE id_inq = {obj.id}")
+        self.banco.cursor.execute(f"DELETE FROM inquilinos WHERE id_inq = {obj.id}")
 
         try:
             self.banco.conn.commit()

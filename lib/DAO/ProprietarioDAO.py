@@ -44,7 +44,7 @@ class ProprietarioDAO():
     def excluir_proprietario(self, obj):
         self.banco.conecta_db()
 
-        self.banco.cursor.execute(f"DETELE FROM proprietarios WHERE id_prop = {obj.id}")
+        self.banco.cursor.execute(f"DELETE FROM proprietarios WHERE id_prop = {obj.id}")
 
         try:
             self.banco.conn.commit()

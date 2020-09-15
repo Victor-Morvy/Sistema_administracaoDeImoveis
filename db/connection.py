@@ -15,9 +15,22 @@ import sqlite3
 
 class BancoDeDados():
 
+
     def conecta_db(self):
-        self.conn = sqlite3.connect("imobiliaria_admin.sqlite")
-        self.cursor = self.conn.cursor()
+        try:
+
+            self.conn = sqlite3.connect("imobiliaria_admin.db")
+            self.cursor = self.conn.cursor()
+            print("conexao estabelecida com sucesso")
+
+            self.sqlite_select_Query = "select sqlite_version();"
+            self.cursor.execute(self.sqlite_select_Query)
+            record = self.cursor.fetchall()
+            print("SQLite Database Version is: ", record)
+            self.cursor.close()
+
+        except:
+            print("erro ao conectar no banco")
 
     def desconecta_db(self):
         self.conn.close()

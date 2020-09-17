@@ -18,7 +18,7 @@ class FrmContas():
             self.padInY = 5
             self.entryWidth = 58
 
-            self.jan = Tk()
+            self.jan = Toplevel()
 
             self.validate = self.jan.register(validate_entry)
 
@@ -78,7 +78,7 @@ class FrmContas():
             self.padInY = 5
             self.entryWidth = 58
 
-            self.jan = Tk()
+            self.jan = Toplevel()
 
             # tipo de conta
             self.tipoList = ["ALUGUEL", "ÁGUA", "ENERGIA"]

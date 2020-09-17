@@ -22,7 +22,7 @@ class FrmImoveis():
             self.padInY = 5
             self.entryWidth = 58
 
-            self.jan = Tk()
+            self.jan = Toplevel()
 
             #Variáveis de controle
             self.ufSelect = StringVar(self.jan)

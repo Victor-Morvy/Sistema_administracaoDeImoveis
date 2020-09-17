@@ -15,7 +15,7 @@ class FrmContrato():
             self.padInY = 5
             self.entryWidth = 58
 
-            self.jan = Tk()
+            self.jan = Toplevel()
             self.validate = self.jan.register(validate_entry)
 
             # Variáveis de controle

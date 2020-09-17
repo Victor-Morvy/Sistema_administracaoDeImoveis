@@ -1,19 +1,23 @@
-from tkinter import Tk
-from tkinter import messagebox
-from tkinter import ttk
 from tkinter import *
+import tkinter as tk
 import os
+from tkinter.ttk import Style
+
 import UI.FrmInquilino as frmInq
 import UI.FrmProprietario as frmProp
 import UI.FrmImoveis as frmImo
 import UI.FrmContrato as frmContrato
 import UI.FrmContas as frmContas
 import UI.Inicio as pagInicial
+
 import lib.ColumnListview as multiList
 from lib.funcoes import validate_entry
 
+
+
 conteudoFrame = None
 selectedModulo = "INICIO"
+
 
 #VARIÁVEL GLOBAL PRA JANELA
 #janela = None
@@ -62,9 +66,9 @@ def destroyFrame():
         conteudoFrame.destroy()
         conteudoFrame = None
 
-root = Tk()
+root = tk.Tk()
 
-caixa = Frame(root, bd=3, relief=SUNKEN)
+caixa = Frame(root)
 caixa.pack(anchor=NW, fill=X)
 
 def criaConteudoFrame(nome):
@@ -73,7 +77,7 @@ def criaConteudoFrame(nome):
     destroyFrame()
     global root
     global conteudoFrame
-    conteudoFrame = Frame(root, bd=5, relief=SUNKEN)
+    conteudoFrame = Frame(root)
     conteudoFrame.pack(anchor=NW, fill=BOTH, expand=True, side="left")
 
 def abrir_inq():
@@ -233,7 +237,7 @@ bConta.pack(side="left")
 
 
 destroyFrame()
-conteudoFrame = Frame(root, bd=5, relief=SUNKEN)
+conteudoFrame = Frame(root)
 conteudoFrame.pack(anchor=NW, fill=BOTH, expand=True, side="left")
 
 abrir_inicio()
@@ -251,7 +255,7 @@ labelTitulo4.pack(anchor=NW)'''
 root.iconbitmap(os.path.dirname(__file__) + '/images/icon.ico')
 root.geometry("800x600")
 root.title("Administração de locação")
-root.state("zoomed")
+#root.state("zoomed")
 root.minsize(1024,768)
 
 root.mainloop()

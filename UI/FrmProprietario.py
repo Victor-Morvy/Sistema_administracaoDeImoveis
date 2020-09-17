@@ -17,7 +17,7 @@ class FrmProprietario():
             self.padInY = 5
             self.entryWidth = 58
 
-            self.jan = Tk()
+            self.jan = Toplevel()
 
             self.jan.protocol("WM_DELETE_WINDOW", self.fecha_janela)
             self.janFrame = Frame(self.jan)
